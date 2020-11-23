@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid HorizontalAlignment="Left" Height="292" Margin="10,117,0,0" VerticalAlignment="Top" Width="772"/>
+        <Label Content="App: " HorizontalAlignment="Left" Margin="32,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.385" Height="64" Width="144" FontSize="36"/>
+
     </Grid>
 </Window>

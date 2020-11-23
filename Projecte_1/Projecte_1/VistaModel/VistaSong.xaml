@@ -1,0 +1,25 @@
+﻿<Window x:Name="Vista_Musica" x:Class="Projecte_1.VistaModel.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projecte_1.VistaModel"
+        mc:Ignorable="d"
+        Title="name musica" Height="610" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#FF2C2C2C" HorizontalAlignment="Left" Height="196" Stroke="Black" VerticalAlignment="Top" Width="792"/>
+
+        <Image HorizontalAlignment="Left" Height="196" VerticalAlignment="Top" Width="196" Source="https://images.genius.com/0a2dfec3681e8b19da8c37dd7ecf193c.300x300x1.jpg"/>
+
+        <Label Content="Title of Song" HorizontalAlignment="Left" Margin="216,27,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="#00000000" Foreground="White" Width="566"/>
+        <Rectangle HorizontalAlignment="Left" Height="383" Stroke="Black" VerticalAlignment="Top" Width="792" Margin="0,196,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2C2C2C" Offset="0.056"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+    </Grid>
+</Window>
