@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Projecte_1.Properties
+namespace M15_ProjecteConsumidor_APIGenius.Properties
 {
 
 
