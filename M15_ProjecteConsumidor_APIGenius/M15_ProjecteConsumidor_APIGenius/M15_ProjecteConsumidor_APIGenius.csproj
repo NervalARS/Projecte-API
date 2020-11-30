@@ -59,9 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ControllerInterface_form1.cs" />
-    <Compile Include="Model\Artist_Songs.cs" />
     <Compile Include="Model\Artist.cs" />
-    <Compile Include="Model\Search.cs" />
+    <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Song.cs" />
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
