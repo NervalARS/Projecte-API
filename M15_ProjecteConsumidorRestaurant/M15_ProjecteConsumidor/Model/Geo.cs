@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace M15_ProjecteConsumidor.Model
 {
-    class Restaurant_Menu
+    public class Geo
     {
+        public double lat { get; set; }
+        public double lon { get; set; }
     }
 }

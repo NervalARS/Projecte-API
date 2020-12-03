@@ -7,24 +7,14 @@ using System.Text;
 
 namespace M15_ProjecteConsumidor.Model
 {
-    class Repository
+    public class Repository
     {
-        private static string ws1 = "https://api.documenu.com/v2/restaurant/4072702673999819?key=YOUR_API_KEY_GOES_HERE/";
-        public static List<Song> GetSongsForArtist(string artistId)
+        private static string ws1 = "https://api.documenu.com/v2/";
+        private static string key = "?key=e2b5f2a662a214eb62a4cd0819a1f901";
+        public static Restaurant GetRestaurantWithName(string name)
         {
-            List<Song> lc = (List<Song>)MakeRequest(string.Concat(ws1, "artists/{artistId}/songs"), null, "GET", "application/json", typeof(List<Song>));
+            Restaurant lc = (Restaurant)MakeRequest(string.Concat(ws1, "restaurants/search/fields?restaurant_name={name}0&exact=true"), null, "GET", "application/json", typeof(Restaurant));
             return lc;
-        }
-
-        public static Artist GetArtist(string artistId)
-        {
-            Artist a = (Artist)MakeRequest(string.Concat(ws1, "artists/{artistId}"), null, "GET", "application/json", typeof(Artist));
-            return a;
-        }
-        public static Song GetSong(string songId)
-        {
-            Song s = (Song)MakeRequest(string.Concat(ws1, "songs/{songId}"), null, "GET", "application/json", typeof(Song));
-            return s;
         }
 
         public static object MakeRequest(string requestUrl, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
@@ -39,7 +29,7 @@ namespace M15_ProjecteConsumidor.Model
                 HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest; //WebRequest WR = WebRequest.Create(requestUrl);   
                 string sb = JsonConvert.SerializeObject(JSONRequest);
                 request.Method = JSONmethod;  // "GET"/"POST"/"PUT"/"DELETE";  
-
+                request.Headers.Add("X-API-KEY: ", "e2b5f2a662a214eb62a4cd0819a1f901");
                 if (JSONmethod != "GET")
                 {
                     request.ContentType = JSONContentType; // "application/json";   
