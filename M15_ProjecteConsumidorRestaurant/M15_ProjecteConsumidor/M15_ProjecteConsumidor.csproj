@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="Controlador\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Restaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Restaurante.Designer.cs">
+      <DependentUpon>Restaurante.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\Restaurante.resx">
+      <DependentUpon>Restaurante.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
