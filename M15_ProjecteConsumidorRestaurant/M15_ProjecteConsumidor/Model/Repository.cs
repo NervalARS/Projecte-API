@@ -9,12 +9,55 @@ namespace M15_ProjecteConsumidor.Model
 {
     public class Repository
     {
+        public static Restaurant selectedRestaurant = new Restaurant();
+
         private static string ws1 = "https://api.documenu.com/v2/";
         private static string key = "?key=e2b5f2a662a214eb62a4cd0819a1f901";
         public static Restaurant GetRestaurantWithName(string name)
         {
-            Restaurant lc = (Restaurant)MakeRequest(string.Concat(ws1, "restaurants/search/fields?restaurant_name={name}0&exact=true"), null, "GET", "application/json", typeof(Restaurant));
-            return lc;
+            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurants/search/fields?restaurant_name={name}0&exact=true"), null, "GET", "application/json", typeof(Restaurant));
+            return selectedRestaurant;
+        }
+
+        public static List<Menu> GetMenu(Restaurant restaurant)
+        {
+            List<Menu> menus = restaurant.menus;
+            return menus;
+        }
+
+        public static List<MenuSection> GetMenuSections(Menu menu)
+        {
+            List<MenuSection> menuSections = menu.menu_sections;
+            return menuSections;
+        }
+
+        public static List<MenuItem> GetMenuItems(MenuSection menuSection)
+        {
+            List<MenuItem> menuItems = menuSection.menu_items;
+            return menuItems;
+        }
+
+        public static List<Pricing> GetPricings(MenuItem menuItem)
+        {
+            List<Pricing> pricings = menuItem.pricing;
+            return pricings;
+        }
+        public static Address GetAddress(Restaurant restaurant)
+        {
+            Address address = restaurant.address;
+            return address;
+        }
+
+        public static List<String> GetCuisines(Restaurant restaurant)
+        {
+            List<String> cuisines = restaurant.cuisines;
+            return cuisines;
+        }
+
+        public static Geo GetGeo(Restaurant restaurant)
+        {
+            Geo geo = restaurant.geo;
+            return geo;
         }
 
         public static object MakeRequest(string requestUrl, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
