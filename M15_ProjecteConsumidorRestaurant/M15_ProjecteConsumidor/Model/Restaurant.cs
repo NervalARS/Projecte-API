@@ -24,6 +24,5 @@ namespace M15_ProjecteConsumidor.Model
         {
         }
 
-        public virtual string ToString(Restaurant);
     }
 }
