@@ -18,7 +18,7 @@ namespace M15_ProjecteConsumidor
             Repository.GetRestaurantWithName("Silver Spurs");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Inici());
         }
     }
 }
