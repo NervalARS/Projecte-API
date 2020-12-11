@@ -46,5 +46,10 @@ namespace M15_ProjecteConsumidor
         {
 
         }
+
+        private void Inici_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
