@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.BUTTONS_PANEL = new System.Windows.Forms.Panel();
-            this.HEADER_BUTTONS_PANELS = new System.Windows.Forms.Panel();
-            this.NOM_API = new System.Windows.Forms.Label();
             this.FOOTHER_BUTTONS_PANEL = new System.Windows.Forms.FlowLayoutPanel();
             this.BT_SHOW_RESTAURANTS = new System.Windows.Forms.Button();
             this.BT_SHOW_MENUS = new System.Windows.Forms.Button();
             this.BT_SHOW_FAV_RESTAURANTS = new System.Windows.Forms.Button();
+            this.BT_EXIT = new System.Windows.Forms.Button();
+            this.HEADER_BUTTONS_PANELS = new System.Windows.Forms.Panel();
             this.AUTORS_PROJECTE = new System.Windows.Forms.Label();
+            this.NOM_API = new System.Windows.Forms.Label();
             this.PANEL_REST = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BT_RESPL_MOREINFO = new System.Windows.Forms.Button();
             this.PANEL_MENU = new System.Windows.Forms.Panel();
             this.PANEL_FAV = new System.Windows.Forms.Panel();
             this.PANEL_INICI = new System.Windows.Forms.Panel();
-            this.BT_EXIT = new System.Windows.Forms.Button();
-            this.BT_RESPL_MOREINFO = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BUTTONS_PANEL.SuspendLayout();
-            this.HEADER_BUTTONS_PANELS.SuspendLayout();
             this.FOOTHER_BUTTONS_PANEL.SuspendLayout();
+            this.HEADER_BUTTONS_PANELS.SuspendLayout();
             this.PANEL_REST.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,27 +60,6 @@
             this.BUTTONS_PANEL.Name = "BUTTONS_PANEL";
             this.BUTTONS_PANEL.Size = new System.Drawing.Size(226, 755);
             this.BUTTONS_PANEL.TabIndex = 0;
-            // 
-            // HEADER_BUTTONS_PANELS
-            // 
-            this.HEADER_BUTTONS_PANELS.Controls.Add(this.AUTORS_PROJECTE);
-            this.HEADER_BUTTONS_PANELS.Controls.Add(this.NOM_API);
-            this.HEADER_BUTTONS_PANELS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HEADER_BUTTONS_PANELS.Location = new System.Drawing.Point(0, 0);
-            this.HEADER_BUTTONS_PANELS.Name = "HEADER_BUTTONS_PANELS";
-            this.HEADER_BUTTONS_PANELS.Size = new System.Drawing.Size(226, 76);
-            this.HEADER_BUTTONS_PANELS.TabIndex = 0;
-            // 
-            // NOM_API
-            // 
-            this.NOM_API.AutoSize = true;
-            this.NOM_API.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NOM_API.ForeColor = System.Drawing.Color.White;
-            this.NOM_API.Location = new System.Drawing.Point(12, 9);
-            this.NOM_API.Name = "NOM_API";
-            this.NOM_API.Size = new System.Drawing.Size(200, 29);
-            this.NOM_API.TabIndex = 0;
-            this.NOM_API.Text = "API DOCUMENU";
             // 
             // FOOTHER_BUTTONS_PANEL
             // 
@@ -148,6 +127,35 @@
             this.BT_SHOW_FAV_RESTAURANTS.Text = "Favoritos";
             this.BT_SHOW_FAV_RESTAURANTS.UseVisualStyleBackColor = false;
             // 
+            // BT_EXIT
+            // 
+            this.BT_EXIT.AllowDrop = true;
+            this.BT_EXIT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_EXIT.BackColor = System.Drawing.Color.Transparent;
+            this.BT_EXIT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.BT_EXIT.FlatAppearance.BorderSize = 0;
+            this.BT_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_EXIT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.BT_EXIT.ForeColor = System.Drawing.Color.White;
+            this.BT_EXIT.Location = new System.Drawing.Point(3, 129);
+            this.BT_EXIT.Name = "BT_EXIT";
+            this.BT_EXIT.Size = new System.Drawing.Size(220, 36);
+            this.BT_EXIT.TabIndex = 7;
+            this.BT_EXIT.Text = "Cerrar Aplicacion";
+            this.BT_EXIT.UseVisualStyleBackColor = false;
+            this.BT_EXIT.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // HEADER_BUTTONS_PANELS
+            // 
+            this.HEADER_BUTTONS_PANELS.Controls.Add(this.AUTORS_PROJECTE);
+            this.HEADER_BUTTONS_PANELS.Controls.Add(this.NOM_API);
+            this.HEADER_BUTTONS_PANELS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HEADER_BUTTONS_PANELS.Location = new System.Drawing.Point(0, 0);
+            this.HEADER_BUTTONS_PANELS.Name = "HEADER_BUTTONS_PANELS";
+            this.HEADER_BUTTONS_PANELS.Size = new System.Drawing.Size(226, 76);
+            this.HEADER_BUTTONS_PANELS.TabIndex = 0;
+            // 
             // AUTORS_PROJECTE
             // 
             this.AUTORS_PROJECTE.AutoSize = true;
@@ -160,6 +168,17 @@
             this.AUTORS_PROJECTE.Text = "by Antonio Hernández y Kevin Luque";
             this.AUTORS_PROJECTE.Click += new System.EventHandler(this.label2_Click);
             // 
+            // NOM_API
+            // 
+            this.NOM_API.AutoSize = true;
+            this.NOM_API.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NOM_API.ForeColor = System.Drawing.Color.White;
+            this.NOM_API.Location = new System.Drawing.Point(12, 9);
+            this.NOM_API.Name = "NOM_API";
+            this.NOM_API.Size = new System.Drawing.Size(200, 29);
+            this.NOM_API.TabIndex = 0;
+            this.NOM_API.Text = "API DOCUMENU";
+            // 
             // PANEL_REST
             // 
             this.PANEL_REST.BackColor = System.Drawing.Color.Cyan;
@@ -169,6 +188,34 @@
             this.PANEL_REST.Name = "PANEL_REST";
             this.PANEL_REST.Size = new System.Drawing.Size(707, 705);
             this.PANEL_REST.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(694, 295);
+            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // BT_RESPL_MOREINFO
+            // 
+            this.BT_RESPL_MOREINFO.AllowDrop = true;
+            this.BT_RESPL_MOREINFO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_RESPL_MOREINFO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.BT_RESPL_MOREINFO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.BT_RESPL_MOREINFO.FlatAppearance.BorderSize = 0;
+            this.BT_RESPL_MOREINFO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_RESPL_MOREINFO.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.BT_RESPL_MOREINFO.ForeColor = System.Drawing.Color.White;
+            this.BT_RESPL_MOREINFO.Location = new System.Drawing.Point(477, 304);
+            this.BT_RESPL_MOREINFO.Name = "BT_RESPL_MOREINFO";
+            this.BT_RESPL_MOREINFO.Size = new System.Drawing.Size(220, 36);
+            this.BT_RESPL_MOREINFO.TabIndex = 8;
+            this.BT_RESPL_MOREINFO.Text = "Abrir Restaurante";
+            this.BT_RESPL_MOREINFO.UseVisualStyleBackColor = false;
             // 
             // PANEL_MENU
             // 
@@ -194,52 +241,6 @@
             this.PANEL_INICI.Size = new System.Drawing.Size(707, 705);
             this.PANEL_INICI.TabIndex = 1;
             // 
-            // BT_EXIT
-            // 
-            this.BT_EXIT.AllowDrop = true;
-            this.BT_EXIT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_EXIT.BackColor = System.Drawing.Color.Transparent;
-            this.BT_EXIT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.BT_EXIT.FlatAppearance.BorderSize = 0;
-            this.BT_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_EXIT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.BT_EXIT.ForeColor = System.Drawing.Color.White;
-            this.BT_EXIT.Location = new System.Drawing.Point(3, 129);
-            this.BT_EXIT.Name = "BT_EXIT";
-            this.BT_EXIT.Size = new System.Drawing.Size(220, 36);
-            this.BT_EXIT.TabIndex = 7;
-            this.BT_EXIT.Text = "Cerrar Aplicacion";
-            this.BT_EXIT.UseVisualStyleBackColor = false;
-            this.BT_EXIT.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // BT_RESPL_MOREINFO
-            // 
-            this.BT_RESPL_MOREINFO.AllowDrop = true;
-            this.BT_RESPL_MOREINFO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_RESPL_MOREINFO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.BT_RESPL_MOREINFO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.BT_RESPL_MOREINFO.FlatAppearance.BorderSize = 0;
-            this.BT_RESPL_MOREINFO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_RESPL_MOREINFO.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.BT_RESPL_MOREINFO.ForeColor = System.Drawing.Color.White;
-            this.BT_RESPL_MOREINFO.Location = new System.Drawing.Point(477, 304);
-            this.BT_RESPL_MOREINFO.Name = "BT_RESPL_MOREINFO";
-            this.BT_RESPL_MOREINFO.Size = new System.Drawing.Size(220, 36);
-            this.BT_RESPL_MOREINFO.TabIndex = 8;
-            this.BT_RESPL_MOREINFO.Text = "Abrir Restaurante";
-            this.BT_RESPL_MOREINFO.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(694, 295);
-            this.dataGridView1.TabIndex = 9;
-            // 
             // Inici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,9 +256,9 @@
             this.Name = "Inici";
             this.Text = "Form1";
             this.BUTTONS_PANEL.ResumeLayout(false);
+            this.FOOTHER_BUTTONS_PANEL.ResumeLayout(false);
             this.HEADER_BUTTONS_PANELS.ResumeLayout(false);
             this.HEADER_BUTTONS_PANELS.PerformLayout();
-            this.FOOTHER_BUTTONS_PANEL.ResumeLayout(false);
             this.PANEL_REST.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

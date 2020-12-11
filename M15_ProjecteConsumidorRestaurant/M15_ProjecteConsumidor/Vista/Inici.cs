@@ -41,5 +41,10 @@ namespace M15_ProjecteConsumidor
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
