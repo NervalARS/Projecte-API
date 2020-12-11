@@ -61,5 +61,40 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void RES_ListBoxDeTipoCocina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Title3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Direccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_TipoMoneda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Horas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Telefon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Title1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
