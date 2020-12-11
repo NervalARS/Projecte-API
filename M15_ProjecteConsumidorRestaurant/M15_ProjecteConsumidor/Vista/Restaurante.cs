@@ -26,5 +26,40 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Restaurante_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RES_Title3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RES_Title4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
