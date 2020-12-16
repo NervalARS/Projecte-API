@@ -88,11 +88,12 @@
     <Compile Include="Model\Pricing.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Restaurant.cs" />
-    <Compile Include="Vista\Inicio.cs">
+    <Compile Include="Vista\Class1.cs" />
+    <Compile Include="Vista\Inici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Vista\Inici.Designer.cs">
+      <DependentUpon>Inici.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlador\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,8 +118,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Inici.resx">
+      <DependentUpon>Inici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

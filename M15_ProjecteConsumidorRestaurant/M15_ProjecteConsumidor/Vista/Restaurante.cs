@@ -96,5 +96,10 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void RES_Nom_ID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

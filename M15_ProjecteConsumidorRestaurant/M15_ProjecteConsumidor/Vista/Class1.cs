@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M15_ProjecteConsumidor.Controlador
+namespace M15_ProjecteConsumidor.Vista
 {
-    class RestauranteController
+    class Class1
     {
-
     }
 }

@@ -33,20 +33,20 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_LastMod = new System.Windows.Forms.Label();
             this.RES_Nom_ID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.RES_Title1 = new System.Windows.Forms.Label();
             this.RES_BT_ShowMenu = new System.Windows.Forms.Button();
+            this.RES_ListBoxDeTipoCocina = new System.Windows.Forms.ListBox();
+            this.RES_Telefon = new System.Windows.Forms.Label();
             this.RES_Title2 = new System.Windows.Forms.Label();
+            this.RES_Direccion = new System.Windows.Forms.Label();
             this.RES_GMAP = new GMap.NET.WindowsForms.GMapControl();
+            this.RES_TipoMoneda = new System.Windows.Forms.Label();
             this.RES_DGV_Menus = new System.Windows.Forms.DataGridView();
+            this.RES_Horas = new System.Windows.Forms.Label();
             this.RES_BT_VolverInicio = new System.Windows.Forms.Button();
             this.RES_BT_AddFav = new System.Windows.Forms.Button();
-            this.RES_Title4 = new System.Windows.Forms.Label();
             this.RES_Title3 = new System.Windows.Forms.Label();
-            this.RES_Horas = new System.Windows.Forms.Label();
-            this.RES_TipoMoneda = new System.Windows.Forms.Label();
-            this.RES_Direccion = new System.Windows.Forms.Label();
-            this.RES_Telefon = new System.Windows.Forms.Label();
-            this.RES_ListBoxDeTipoCocina = new System.Windows.Forms.ListBox();
-            this.RES_Title1 = new System.Windows.Forms.Label();
+            this.RES_Title4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RES_DGV_Menus)).BeginInit();
@@ -55,20 +55,20 @@ namespace M15_ProjecteConsumidor.Vista
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.panel1.Controls.Add(this.RES_LastMod);
             this.panel1.Controls.Add(this.RES_Nom_ID);
+            this.panel1.Controls.Add(this.RES_BT_VolverInicio);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 62);
+            this.panel1.Size = new System.Drawing.Size(1084, 77);
             this.panel1.TabIndex = 0;
             // 
             // RES_LastMod
             // 
             this.RES_LastMod.AutoSize = true;
             this.RES_LastMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_LastMod.ForeColor = System.Drawing.Color.White;
-            this.RES_LastMod.Location = new System.Drawing.Point(885, 20);
+            this.RES_LastMod.ForeColor = System.Drawing.Color.Black;
+            this.RES_LastMod.Location = new System.Drawing.Point(889, 12);
             this.RES_LastMod.Name = "RES_LastMod";
             this.RES_LastMod.Size = new System.Drawing.Size(182, 20);
             this.RES_LastMod.TabIndex = 13;
@@ -79,15 +79,17 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Nom_ID.AutoSize = true;
             this.RES_Nom_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RES_Nom_ID.ForeColor = System.Drawing.Color.White;
-            this.RES_Nom_ID.Location = new System.Drawing.Point(9, 8);
+            this.RES_Nom_ID.Location = new System.Drawing.Point(8, 20);
             this.RES_Nom_ID.Name = "RES_Nom_ID";
             this.RES_Nom_ID.Size = new System.Drawing.Size(321, 46);
             this.RES_Nom_ID.TabIndex = 0;
             this.RES_Nom_ID.Text = "Nom Restaurant:";
+            this.RES_Nom_ID.Click += new System.EventHandler(this.RES_Nom_ID_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.RES_LastMod);
             this.panel2.Controls.Add(this.RES_Title1);
             this.panel2.Controls.Add(this.RES_BT_ShowMenu);
             this.panel2.Controls.Add(this.RES_ListBoxDeTipoCocina);
@@ -98,15 +100,26 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel2.Controls.Add(this.RES_TipoMoneda);
             this.panel2.Controls.Add(this.RES_DGV_Menus);
             this.panel2.Controls.Add(this.RES_Horas);
-            this.panel2.Controls.Add(this.RES_BT_VolverInicio);
             this.panel2.Controls.Add(this.RES_BT_AddFav);
             this.panel2.Controls.Add(this.RES_Title3);
             this.panel2.Controls.Add(this.RES_Title4);
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1084, 1012);
+            this.panel2.Size = new System.Drawing.Size(1084, 995);
             this.panel2.TabIndex = 1;
+            // 
+            // RES_Title1
+            // 
+            this.RES_Title1.AutoSize = true;
+            this.RES_Title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_Title1.ForeColor = System.Drawing.Color.Black;
+            this.RES_Title1.Location = new System.Drawing.Point(31, 42);
+            this.RES_Title1.Name = "RES_Title1";
+            this.RES_Title1.Size = new System.Drawing.Size(213, 36);
+            this.RES_Title1.TabIndex = 48;
+            this.RES_Title1.Text = "Datos Básicos:";
+            this.RES_Title1.Click += new System.EventHandler(this.RES_Title1_Click);
             // 
             // RES_BT_ShowMenu
             // 
@@ -127,6 +140,32 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_BT_ShowMenu.Text = "Abrir Menu";
             this.RES_BT_ShowMenu.UseVisualStyleBackColor = false;
             // 
+            // RES_ListBoxDeTipoCocina
+            // 
+            this.RES_ListBoxDeTipoCocina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.RES_ListBoxDeTipoCocina.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RES_ListBoxDeTipoCocina.FormattingEnabled = true;
+            this.RES_ListBoxDeTipoCocina.ItemHeight = 20;
+            this.RES_ListBoxDeTipoCocina.Location = new System.Drawing.Point(65, 286);
+            this.RES_ListBoxDeTipoCocina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RES_ListBoxDeTipoCocina.Name = "RES_ListBoxDeTipoCocina";
+            this.RES_ListBoxDeTipoCocina.Size = new System.Drawing.Size(447, 160);
+            this.RES_ListBoxDeTipoCocina.TabIndex = 47;
+            this.RES_ListBoxDeTipoCocina.SelectedIndexChanged += new System.EventHandler(this.RES_ListBoxDeTipoCocina_SelectedIndexChanged);
+            // 
+            // RES_Telefon
+            // 
+            this.RES_Telefon.AutoSize = true;
+            this.RES_Telefon.BackColor = System.Drawing.Color.Transparent;
+            this.RES_Telefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_Telefon.ForeColor = System.Drawing.Color.Black;
+            this.RES_Telefon.Location = new System.Drawing.Point(60, 83);
+            this.RES_Telefon.Name = "RES_Telefon";
+            this.RES_Telefon.Size = new System.Drawing.Size(78, 25);
+            this.RES_Telefon.TabIndex = 41;
+            this.RES_Telefon.Text = "Telefon";
+            this.RES_Telefon.Click += new System.EventHandler(this.RES_Telefon_Click);
+            // 
             // RES_Title2
             // 
             this.RES_Title2.AutoSize = true;
@@ -138,6 +177,19 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Title2.TabIndex = 39;
             this.RES_Title2.Text = "Menu";
             // 
+            // RES_Direccion
+            // 
+            this.RES_Direccion.AutoSize = true;
+            this.RES_Direccion.BackColor = System.Drawing.Color.Transparent;
+            this.RES_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_Direccion.ForeColor = System.Drawing.Color.Black;
+            this.RES_Direccion.Location = new System.Drawing.Point(60, 163);
+            this.RES_Direccion.Name = "RES_Direccion";
+            this.RES_Direccion.Size = new System.Drawing.Size(93, 25);
+            this.RES_Direccion.TabIndex = 46;
+            this.RES_Direccion.Text = "Direccion";
+            this.RES_Direccion.Click += new System.EventHandler(this.RES_Direccion_Click);
+            // 
             // RES_GMAP
             // 
             this.RES_GMAP.Bearing = 0F;
@@ -146,7 +198,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_GMAP.GrayScaleMode = false;
             this.RES_GMAP.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.RES_GMAP.LevelsKeepInMemory = 5;
-            this.RES_GMAP.Location = new System.Drawing.Point(32, 525);
+            this.RES_GMAP.Location = new System.Drawing.Point(37, 508);
             this.RES_GMAP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RES_GMAP.MarkersEnabled = true;
             this.RES_GMAP.MaxZoom = 2;
@@ -165,6 +217,19 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_GMAP.TabIndex = 39;
             this.RES_GMAP.Zoom = 0D;
             // 
+            // RES_TipoMoneda
+            // 
+            this.RES_TipoMoneda.AutoSize = true;
+            this.RES_TipoMoneda.BackColor = System.Drawing.Color.Transparent;
+            this.RES_TipoMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_TipoMoneda.ForeColor = System.Drawing.Color.Black;
+            this.RES_TipoMoneda.Location = new System.Drawing.Point(60, 137);
+            this.RES_TipoMoneda.Name = "RES_TipoMoneda";
+            this.RES_TipoMoneda.Size = new System.Drawing.Size(164, 25);
+            this.RES_TipoMoneda.TabIndex = 42;
+            this.RES_TipoMoneda.Text = "Tipus de moneda";
+            this.RES_TipoMoneda.Click += new System.EventHandler(this.RES_TipoMoneda_Click);
+            // 
             // RES_DGV_Menus
             // 
             this.RES_DGV_Menus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
@@ -177,18 +242,31 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_DGV_Menus.Size = new System.Drawing.Size(447, 291);
             this.RES_DGV_Menus.TabIndex = 38;
             // 
+            // RES_Horas
+            // 
+            this.RES_Horas.AutoSize = true;
+            this.RES_Horas.BackColor = System.Drawing.Color.Transparent;
+            this.RES_Horas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_Horas.ForeColor = System.Drawing.Color.Black;
+            this.RES_Horas.Location = new System.Drawing.Point(61, 111);
+            this.RES_Horas.Name = "RES_Horas";
+            this.RES_Horas.Size = new System.Drawing.Size(64, 25);
+            this.RES_Horas.TabIndex = 43;
+            this.RES_Horas.Text = "Horas";
+            this.RES_Horas.Click += new System.EventHandler(this.RES_Horas_Click);
+            // 
             // RES_BT_VolverInicio
             // 
             this.RES_BT_VolverInicio.AllowDrop = true;
             this.RES_BT_VolverInicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RES_BT_VolverInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.RES_BT_VolverInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(120)))), ((int)(((byte)(101)))));
             this.RES_BT_VolverInicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
             this.RES_BT_VolverInicio.FlatAppearance.BorderSize = 0;
             this.RES_BT_VolverInicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RES_BT_VolverInicio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.RES_BT_VolverInicio.ForeColor = System.Drawing.Color.White;
-            this.RES_BT_VolverInicio.Location = new System.Drawing.Point(822, 931);
+            this.RES_BT_VolverInicio.Location = new System.Drawing.Point(844, 14);
             this.RES_BT_VolverInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RES_BT_VolverInicio.Name = "RES_BT_VolverInicio";
             this.RES_BT_VolverInicio.Size = new System.Drawing.Size(226, 55);
@@ -208,7 +286,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_BT_AddFav.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RES_BT_AddFav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.RES_BT_AddFav.ForeColor = System.Drawing.Color.White;
-            this.RES_BT_AddFav.Location = new System.Drawing.Point(32, 931);
+            this.RES_BT_AddFav.Location = new System.Drawing.Point(37, 914);
             this.RES_BT_AddFav.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RES_BT_AddFav.Name = "RES_BT_AddFav";
             this.RES_BT_AddFav.Size = new System.Drawing.Size(348, 55);
@@ -216,17 +294,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_BT_AddFav.Text = "Añadir Restaurante a Favoritos";
             this.RES_BT_AddFav.UseVisualStyleBackColor = false;
             this.RES_BT_AddFav.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // RES_Title4
-            // 
-            this.RES_Title4.AutoSize = true;
-            this.RES_Title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Title4.Location = new System.Drawing.Point(24, 482);
-            this.RES_Title4.Name = "RES_Title4";
-            this.RES_Title4.Size = new System.Drawing.Size(189, 36);
-            this.RES_Title4.TabIndex = 26;
-            this.RES_Title4.Text = "Localizacion:";
-            this.RES_Title4.Click += new System.EventHandler(this.RES_Title4_Click);
             // 
             // RES_Title3
             // 
@@ -240,82 +307,16 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Title3.Text = "Tipo de cocina:";
             this.RES_Title3.Click += new System.EventHandler(this.RES_Title3_Click_1);
             // 
-            // RES_Horas
+            // RES_Title4
             // 
-            this.RES_Horas.AutoSize = true;
-            this.RES_Horas.BackColor = System.Drawing.Color.Transparent;
-            this.RES_Horas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Horas.ForeColor = System.Drawing.Color.Black;
-            this.RES_Horas.Location = new System.Drawing.Point(61, 111);
-            this.RES_Horas.Name = "RES_Horas";
-            this.RES_Horas.Size = new System.Drawing.Size(64, 25);
-            this.RES_Horas.TabIndex = 43;
-            this.RES_Horas.Text = "Horas";
-            this.RES_Horas.Click += new System.EventHandler(this.RES_Horas_Click);
-            // 
-            // RES_TipoMoneda
-            // 
-            this.RES_TipoMoneda.AutoSize = true;
-            this.RES_TipoMoneda.BackColor = System.Drawing.Color.Transparent;
-            this.RES_TipoMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_TipoMoneda.ForeColor = System.Drawing.Color.Black;
-            this.RES_TipoMoneda.Location = new System.Drawing.Point(60, 137);
-            this.RES_TipoMoneda.Name = "RES_TipoMoneda";
-            this.RES_TipoMoneda.Size = new System.Drawing.Size(164, 25);
-            this.RES_TipoMoneda.TabIndex = 42;
-            this.RES_TipoMoneda.Text = "Tipus de moneda";
-            this.RES_TipoMoneda.Click += new System.EventHandler(this.RES_TipoMoneda_Click);
-            // 
-            // RES_Direccion
-            // 
-            this.RES_Direccion.AutoSize = true;
-            this.RES_Direccion.BackColor = System.Drawing.Color.Transparent;
-            this.RES_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Direccion.ForeColor = System.Drawing.Color.Black;
-            this.RES_Direccion.Location = new System.Drawing.Point(60, 163);
-            this.RES_Direccion.Name = "RES_Direccion";
-            this.RES_Direccion.Size = new System.Drawing.Size(93, 25);
-            this.RES_Direccion.TabIndex = 46;
-            this.RES_Direccion.Text = "Direccion";
-            this.RES_Direccion.Click += new System.EventHandler(this.RES_Direccion_Click);
-            // 
-            // RES_Telefon
-            // 
-            this.RES_Telefon.AutoSize = true;
-            this.RES_Telefon.BackColor = System.Drawing.Color.Transparent;
-            this.RES_Telefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Telefon.ForeColor = System.Drawing.Color.Black;
-            this.RES_Telefon.Location = new System.Drawing.Point(60, 83);
-            this.RES_Telefon.Name = "RES_Telefon";
-            this.RES_Telefon.Size = new System.Drawing.Size(78, 25);
-            this.RES_Telefon.TabIndex = 41;
-            this.RES_Telefon.Text = "Telefon";
-            this.RES_Telefon.Click += new System.EventHandler(this.RES_Telefon_Click);
-            // 
-            // RES_ListBoxDeTipoCocina
-            // 
-            this.RES_ListBoxDeTipoCocina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
-            this.RES_ListBoxDeTipoCocina.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RES_ListBoxDeTipoCocina.FormattingEnabled = true;
-            this.RES_ListBoxDeTipoCocina.ItemHeight = 20;
-            this.RES_ListBoxDeTipoCocina.Location = new System.Drawing.Point(65, 286);
-            this.RES_ListBoxDeTipoCocina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.RES_ListBoxDeTipoCocina.Name = "RES_ListBoxDeTipoCocina";
-            this.RES_ListBoxDeTipoCocina.Size = new System.Drawing.Size(447, 160);
-            this.RES_ListBoxDeTipoCocina.TabIndex = 47;
-            this.RES_ListBoxDeTipoCocina.SelectedIndexChanged += new System.EventHandler(this.RES_ListBoxDeTipoCocina_SelectedIndexChanged);
-            // 
-            // RES_Title1
-            // 
-            this.RES_Title1.AutoSize = true;
-            this.RES_Title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Title1.ForeColor = System.Drawing.Color.Black;
-            this.RES_Title1.Location = new System.Drawing.Point(31, 42);
-            this.RES_Title1.Name = "RES_Title1";
-            this.RES_Title1.Size = new System.Drawing.Size(213, 36);
-            this.RES_Title1.TabIndex = 48;
-            this.RES_Title1.Text = "Datos Básicos:";
-            this.RES_Title1.Click += new System.EventHandler(this.RES_Title1_Click);
+            this.RES_Title4.AutoSize = true;
+            this.RES_Title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RES_Title4.Location = new System.Drawing.Point(29, 465);
+            this.RES_Title4.Name = "RES_Title4";
+            this.RES_Title4.Size = new System.Drawing.Size(189, 36);
+            this.RES_Title4.TabIndex = 26;
+            this.RES_Title4.Text = "Localizacion:";
+            this.RES_Title4.Click += new System.EventHandler(this.RES_Title4_Click);
             // 
             // Restaurante
             // 
@@ -324,6 +325,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.ClientSize = new System.Drawing.Size(1083, 1065);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Restaurante";
             this.Text = "Restaurante";
             this.Load += new System.EventHandler(this.Restaurante_Load);

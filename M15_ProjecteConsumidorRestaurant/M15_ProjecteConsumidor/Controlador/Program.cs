@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using M15_ProjecteConsumidor.Model;
+using M15_ProjecteConsumidor.Controlador;
 
 namespace M15_ProjecteConsumidor
 {
@@ -15,10 +15,7 @@ namespace M15_ProjecteConsumidor
         [STAThread]
         static void Main()
         {
-            Repository.GetRestaurantWithName("Silver Spurs");
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inici());
+            InicioController IC = new InicioController();
         }
     }
 }

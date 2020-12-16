@@ -31,6 +31,7 @@ namespace M15_ProjecteConsumidor.Vista
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.MEN_Nom = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.RES_Title1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,7 +41,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,10 +51,11 @@ namespace M15_ProjecteConsumidor.Vista
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
             this.panel1.Controls.Add(this.MEN_Nom);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1208, 62);
+            this.panel1.Size = new System.Drawing.Size(1080, 82);
             this.panel1.TabIndex = 2;
             // 
             // MEN_Nom
@@ -62,11 +63,30 @@ namespace M15_ProjecteConsumidor.Vista
             this.MEN_Nom.AutoSize = true;
             this.MEN_Nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MEN_Nom.ForeColor = System.Drawing.Color.White;
-            this.MEN_Nom.Location = new System.Drawing.Point(9, 8);
+            this.MEN_Nom.Location = new System.Drawing.Point(19, 23);
             this.MEN_Nom.Name = "MEN_Nom";
             this.MEN_Nom.Size = new System.Drawing.Size(139, 46);
             this.MEN_Nom.TabIndex = 0;
             this.MEN_Nom.Text = "Menus";
+            // 
+            // button1
+            // 
+            this.button1.AllowDrop = true;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(120)))), ((int)(((byte)(101)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(867, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 55);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Volver a Inicio";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // RES_Title1
             // 
@@ -84,12 +104,11 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.RES_Title1);
-            this.panel3.Location = new System.Drawing.Point(-2, 60);
+            this.panel3.Location = new System.Drawing.Point(-2, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1208, 774);
+            this.panel3.Size = new System.Drawing.Size(1085, 754);
             this.panel3.TabIndex = 14;
             // 
             // panel2
@@ -171,32 +190,14 @@ namespace M15_ProjecteConsumidor.Vista
             this.dataGridView1.Size = new System.Drawing.Size(1017, 231);
             this.dataGridView1.TabIndex = 39;
             // 
-            // button1
-            // 
-            this.button1.AllowDrop = true;
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(27, 694);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 55);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Volver a Inicio";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 828);
+            this.ClientSize = new System.Drawing.Size(1074, 776);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Menu";
             this.Text = "Menu";
