@@ -19,13 +19,13 @@ namespace M15_ProjecteConsumidor.Model
             return selectedRestaurant;
         }
 
-        public static List<Menu> GetMenu(Restaurant restaurant)
+        public static List<MMenu> GetMenu(Restaurant restaurant)
         {
-            List<Menu> menus = restaurant.menus;
+            List<MMenu> menus = restaurant.menus;
             return menus;
         }
 
-        public static List<MenuSection> GetMenuSections(Menu menu)
+        public static List<MenuSection> GetMenuSections(MMenu menu)
         {
             List<MenuSection> menuSections = menu.menu_sections;
             return menuSections;
