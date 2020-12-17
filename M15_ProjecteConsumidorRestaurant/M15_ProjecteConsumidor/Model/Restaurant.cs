@@ -17,7 +17,7 @@ namespace M15_ProjecteConsumidor.Model
         public List<string> cuisines { get; set; }
         public Address address { get; set; }
         public Geo geo { get; set; }
-        public List<Menu> menus { get; set; }
+        public List<MMenu> menus { get; set; }
         public DateTime last_updated { get; set; }
 
         public Restaurant()
