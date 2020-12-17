@@ -18,9 +18,7 @@ namespace M15_ProjecteConsumidor.Controlador
             InitListeners();
             VI.PANEL_INICI.BringToFront();
             Application.Run(VI);
-            Restaurant r = new Restaurant();
-            r.restaurant_name = "Restaurante Las Tres Torres";
-            RF.addToFav(r);
+            
         }
 
         #region | Inicio de Controladores
@@ -57,6 +55,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void showFavRest(Object sender, EventArgs e)
         {
+            FavRestCargarList();
             VI.PANEL_FAV.BringToFront();
         }
 
@@ -99,9 +98,10 @@ namespace M15_ProjecteConsumidor.Controlador
         {
             if (RF!=null)
             {
+                VI.PANEL_FAV_LIST.Items.Add("Inicio");
                 foreach (Restaurant rest in this.RF.getFavRes())
                 {
-                    VI.PANEL_FAV_LIST.Items.Add(rest.restaurant_name);
+                    VI.PANEL_FAV_LIST.Items.Add(rest);
                 }
             }
             else

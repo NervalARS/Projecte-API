@@ -34,5 +34,10 @@ namespace M15_ProjecteConsumidor.Model
         {
             this.List = l;
         }
+
+        public void cargaDades()
+        {
+
+        }
     }
 }

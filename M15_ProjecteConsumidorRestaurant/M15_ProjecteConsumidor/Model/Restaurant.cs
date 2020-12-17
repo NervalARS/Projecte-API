@@ -22,7 +22,7 @@ namespace M15_ProjecteConsumidor.Model
 
         public Restaurant()
         {
-        }
 
+        }
     }
 }
