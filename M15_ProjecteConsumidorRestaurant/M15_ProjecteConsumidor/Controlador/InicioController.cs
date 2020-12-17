@@ -11,11 +11,16 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class InicioController
     {
+        RestaurantesFavoritos RF = new RestaurantesFavoritos();
         VInici VI = new VInici();
         public InicioController()
         {
             InitListeners();
+            VI.PANEL_INICI.BringToFront();
             Application.Run(VI);
+            Restaurant r = new Restaurant();
+            r.restaurant_name = "Restaurante Las Tres Torres";
+            RF.addToFav(r);
         }
 
         #region | Inicio de Controladores
@@ -85,24 +90,24 @@ namespace M15_ProjecteConsumidor.Controlador
             Restaurant ResFav = new Restaurant();
             // Mas o menos xD | ResFav = VI.PANEL_FAV_DGV.SelectedRows;
             RestauranteController RC = new RestauranteController(ResFav);
-            FavRestCargarDGV();
+            FavRestCargarList();
         }
         #endregion
 
         #region | Otros Métodos
-        private void RestCargarDGV()
+        private void FavRestCargarList()
         {
-            
-        }
+            if (RF!=null)
+            {
+                foreach (Restaurant rest in this.RF.getFavRes())
+                {
+                    VI.PANEL_FAV_LIST.Items.Add(rest.restaurant_name);
+                }
+            }
+            else
+            {
 
-        private void MenuCargarDGV()
-        {
-
-        }
-
-        private void FavRestCargarDGV()
-        {
-
+            }
         }
         #endregion
     }

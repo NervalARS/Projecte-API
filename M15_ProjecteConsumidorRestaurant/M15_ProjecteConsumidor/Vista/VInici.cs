@@ -126,5 +126,25 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void PANEL_MENU_TB_MENUID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PANEL_MENU_TITLE_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PANEL_FAV_DGV_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PANEL_REST_TB_RESTID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="Controlador\RestauranteController.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Geo.cs" />
+    <Compile Include="Model\RestaurantesFavoritos.cs" />
     <Compile Include="Model\MMenu.cs" />
     <Compile Include="Model\MenuItem.cs" />
     <Compile Include="Model\MenuSection.cs" />
