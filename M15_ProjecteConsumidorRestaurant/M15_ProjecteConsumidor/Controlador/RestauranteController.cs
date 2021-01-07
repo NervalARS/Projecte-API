@@ -13,9 +13,24 @@ namespace M15_ProjecteConsumidor.Controlador
     {
         VRestaurante VR = new VRestaurante();
         Restaurant RES = new Restaurant();
+        RestaurantesFavoritos FAV;
         public RestauranteController(Restaurant RES)
         {
             VR.ShowDialog();
+            VR.RES_Telefon.Text = "Telefon: " + RES.restaurant_phone ;
+            VR.RES_Horas.Text = "Horas: " + RES.hours;
+            VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.price_range;
+            VR.RES_Direccion.Text = "Direccio: " + RES.address;
+            foreach(string cuisines in RES.cuisines)
+            {
+                VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
+            }
+
+            foreach (MMenu menu in RES.menus)
+            {
+                VR.RES_ListBoxDeTipoCocina.Items.Add(menu.menu_name);
+            }
+
         }
 
         private void InitListeners()
@@ -27,12 +42,12 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void AddFavRestaurant(Object sender, EventArgs e)
         {
-            
+            FAV.addToFav(RES);
         }
         
         private void showMenu(Object sender, EventArgs e)
         {
-        
+            MenuController MEN_CON = new MenuController();
         }
     }
 }
