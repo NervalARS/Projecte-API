@@ -8,7 +8,7 @@ namespace M15_ProjecteConsumidor.Model
 {
     class RestaurantesFavoritos
     {
-        private List<Restaurant> List = new List<Restaurant>;
+        private List<Restaurant> List = new List<Restaurant>();
 
         public RestaurantesFavoritos()
         {
