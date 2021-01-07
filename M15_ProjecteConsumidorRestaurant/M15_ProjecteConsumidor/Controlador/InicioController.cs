@@ -11,14 +11,22 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class InicioController
     {
-        RestaurantesFavoritos RF = new RestaurantesFavoritos();
-        VInici VI = new VInici();
+        RestaurantesFavoritos RF {get; set;}
+
+    VInici VI = new VInici();
         public InicioController()
         {
-            InitListeners();
-            VI.PANEL_INICI.BringToFront();
-            Application.Run(VI);
-            
+            try
+            {
+                FavRestCargarList();
+                InitListeners();
+                VI.PANEL_INICI.BringToFront();
+                Application.Run(VI);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error en el InicioController.cs");
+            }
         }
 
         #region | Inicio de Controladores
@@ -68,11 +76,12 @@ namespace M15_ProjecteConsumidor.Controlador
         #region | Controladores Panel Restaurante
         private void newViewRest(Object sender, EventArgs e)
         {
-            if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
+            //if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
                 Restaurant Res = new Restaurant();
-                // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
-                RestauranteController RC = new RestauranteController(Res);
-            }
+             // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
+            VI.Close();
+                RestauranteController RC = new RestauranteController(Res, VI);
+            //}
         }
         #endregion
 
@@ -89,9 +98,13 @@ namespace M15_ProjecteConsumidor.Controlador
         private void newViewFav(Object sender, EventArgs e)
         {
             Restaurant ResFav = new Restaurant();
-            // Mas o menos xD | ResFav = VI.PANEL_FAV_DGV.SelectedRows;
-            RestauranteController RC = new RestauranteController(ResFav);
-            FavRestCargarList();
+
+            if (RF != null)
+            {
+                ResFav = (Restaurant)VI.PANEL_FAV_LIST.SelectedItem;
+                RestauranteController RC = new RestauranteController(ResFav);
+                
+            }            
         }
         #endregion
 

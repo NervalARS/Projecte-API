@@ -6,62 +6,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//Mapa
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
-using GMap.NET.WindowsForms.Markers;
 
 namespace M15_ProjecteConsumidor.Controlador
 {
     class RestauranteController
     {
-        VRestaurante VR = new VRestaurante();
-        Restaurant RES = new Restaurant();
+        Restaurant RES;
         RestaurantesFavoritos FAV;
-        public RestauranteController(Restaurant RES)
+        VRestaurante VR;
+        VInici V2;
+        double Glat;
+        double Glon;
+
+        public RestauranteController(Restaurant RES, VInici VV)
         {
+            //Preparo todas las variables
+            V2=VV;
+            RES = Repository.GetRestaurantWithName("Panera Bread");
+            if (RES!=null) {
+                Glat = RES.geo.lat;
+                Glon = RES.geo.lon;
+            }
+            else
+            {
+                Glat = 32.296934;
+                Glon = -64.793031;
+            }
+            VR = new VRestaurante(Glat, Glon); // Aqui tienes que poner la Latitud primero, Longitud segundo, en formato double
+
+            //Inicio la app
             VR.ShowDialog();
-            setGMap();
             VR.RES_Telefon.Text = "Telefon: " + RES.restaurant_phone ;
             VR.RES_Horas.Text = "Horas: " + RES.hours;
             VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.price_range;
             VR.RES_Direccion.Text = "Direccio: " + RES.address;
-            foreach(string cuisines in RES.cuisines)
+            if (RES.cuisines != null)
             {
-                VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
+                foreach (string cuisines in RES.cuisines)
+                {
+                    VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
+                }
             }
-
-            foreach (MMenu menu in RES.menus)
+            if (RES.menus != null)
             {
-                VR.RES_ListBoxDeTipoCocina.Items.Add(menu.menu_name);
+                foreach (MMenu menu in RES.menus)
+                {
+                    VR.RES_ListBoxDeTipoCocina.Items.Add(menu.menu_name);
+                }
             }
-            
-
         }
 
         private void InitListeners()
         {
             VR.RES_BT_AddFav.Click += AddFavRestaurant;
             VR.RES_BT_ShowMenu.Click += showMenu;
-        }
-
-        private void setGMap()
-        {
-            GMarkerGoogle gMarker;
-            GMapOverlay mapOverlay;
-            
-            double latini = 41.589661;//RES.geo.lat;
-            double lonini = 2.291150;//RES.geo.lon;
-
-            VR.RES_GMAP.MapProvider = GMapProviders.GoogleMap;
-            VR.RES_GMAP.DragButton = MouseButtons.Left;
-            VR.RES_GMAP.CanDragMap = true;
-            VR.RES_GMAP.Position = new PointLatLng(latini, lonini);
-            VR.RES_GMAP.MinZoom = 0;
-            VR.RES_GMAP.MaxZoom = 24;
-            VR.RES_GMAP.Zoom = 9;
-            VR.RES_GMAP.AutoScroll = true;
+            VR.BT_EXIT.Click += exitapp; 
         }
 
         private void AddFavRestaurant(Object sender, EventArgs e)
@@ -72,6 +71,11 @@ namespace M15_ProjecteConsumidor.Controlador
         private void showMenu(Object sender, EventArgs e)
         {
             //MenuController MEN_CON = new MenuController(VR.RES_DGV_Menus.SelectedRows);
+        }
+
+        private void exitapp(Object sender, EventArgs e)
+        {
+            VR.Close();   
         }
     }
 }
