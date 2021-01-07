@@ -18,5 +18,7 @@ namespace M15_ProjecteConsumidor.Controlador
             this.MEN = men;
             VM.ShowDialog();
         }
+
+
     }
 }

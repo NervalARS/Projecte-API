@@ -68,9 +68,11 @@ namespace M15_ProjecteConsumidor.Controlador
         #region | Controladores Panel Restaurante
         private void newViewRest(Object sender, EventArgs e)
         {
-            Restaurant Res = new Restaurant();
-            // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
-            RestauranteController RC = new RestauranteController(Res);
+            if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
+                Restaurant Res = new Restaurant();
+                // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
+                RestauranteController RC = new RestauranteController(Res);
+            }
         }
         #endregion
 

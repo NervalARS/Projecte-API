@@ -76,5 +76,10 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void VMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

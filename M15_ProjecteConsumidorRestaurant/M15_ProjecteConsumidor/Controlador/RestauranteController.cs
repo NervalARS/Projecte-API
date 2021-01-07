@@ -6,6 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Mapa
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace M15_ProjecteConsumidor.Controlador
 {
@@ -17,6 +22,7 @@ namespace M15_ProjecteConsumidor.Controlador
         public RestauranteController(Restaurant RES)
         {
             VR.ShowDialog();
+            setGMap();
             VR.RES_Telefon.Text = "Telefon: " + RES.restaurant_phone ;
             VR.RES_Horas.Text = "Horas: " + RES.hours;
             VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.price_range;
@@ -30,6 +36,7 @@ namespace M15_ProjecteConsumidor.Controlador
             {
                 VR.RES_ListBoxDeTipoCocina.Items.Add(menu.menu_name);
             }
+            
 
         }
 
@@ -39,6 +46,23 @@ namespace M15_ProjecteConsumidor.Controlador
             VR.RES_BT_ShowMenu.Click += showMenu;
         }
 
+        private void setGMap()
+        {
+            GMarkerGoogle gMarker;
+            GMapOverlay mapOverlay;
+            
+            double latini = 41.589661;//RES.geo.lat;
+            double lonini = 2.291150;//RES.geo.lon;
+
+            VR.RES_GMAP.MapProvider = GMapProviders.GoogleMap;
+            VR.RES_GMAP.DragButton = MouseButtons.Left;
+            VR.RES_GMAP.CanDragMap = true;
+            VR.RES_GMAP.Position = new PointLatLng(latini, lonini);
+            VR.RES_GMAP.MinZoom = 0;
+            VR.RES_GMAP.MaxZoom = 24;
+            VR.RES_GMAP.Zoom = 9;
+            VR.RES_GMAP.AutoScroll = true;
+        }
 
         private void AddFavRestaurant(Object sender, EventArgs e)
         {
@@ -47,7 +71,7 @@ namespace M15_ProjecteConsumidor.Controlador
         
         private void showMenu(Object sender, EventArgs e)
         {
-            MenuController MEN_CON = new MenuController();
+            //MenuController MEN_CON = new MenuController(VR.RES_DGV_Menus.SelectedRows);
         }
     }
 }

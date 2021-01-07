@@ -30,6 +30,7 @@ namespace M15_ProjecteConsumidor.Vista
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BT_EXIT = new System.Windows.Forms.Button();
             this.MEN_Nom = new System.Windows.Forms.Label();
             this.RES_Title1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -40,7 +41,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BT_EXIT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,6 +58,25 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel1.Size = new System.Drawing.Size(1080, 82);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // BT_EXIT
+            // 
+            this.BT_EXIT.AllowDrop = true;
+            this.BT_EXIT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_EXIT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(120)))), ((int)(((byte)(101)))));
+            this.BT_EXIT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.BT_EXIT.FlatAppearance.BorderSize = 0;
+            this.BT_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_EXIT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.BT_EXIT.ForeColor = System.Drawing.Color.White;
+            this.BT_EXIT.Location = new System.Drawing.Point(732, 14);
+            this.BT_EXIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BT_EXIT.Name = "BT_EXIT";
+            this.BT_EXIT.Size = new System.Drawing.Size(331, 55);
+            this.BT_EXIT.TabIndex = 48;
+            this.BT_EXIT.Text = "Volver a Inicio";
+            this.BT_EXIT.UseVisualStyleBackColor = false;
             // 
             // MEN_Nom
             // 
@@ -181,25 +200,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // BT_EXIT
-            // 
-            this.BT_EXIT.AllowDrop = true;
-            this.BT_EXIT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_EXIT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(120)))), ((int)(((byte)(101)))));
-            this.BT_EXIT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.BT_EXIT.FlatAppearance.BorderSize = 0;
-            this.BT_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_EXIT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.BT_EXIT.ForeColor = System.Drawing.Color.White;
-            this.BT_EXIT.Location = new System.Drawing.Point(732, 14);
-            this.BT_EXIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BT_EXIT.Name = "BT_EXIT";
-            this.BT_EXIT.Size = new System.Drawing.Size(331, 55);
-            this.BT_EXIT.TabIndex = 48;
-            this.BT_EXIT.Text = "Volver a Inicio";
-            this.BT_EXIT.UseVisualStyleBackColor = false;
-            // 
             // VMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -211,6 +211,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VMenu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.VMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
