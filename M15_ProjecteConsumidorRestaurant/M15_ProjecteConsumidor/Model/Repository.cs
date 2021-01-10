@@ -15,7 +15,8 @@ namespace M15_ProjecteConsumidor.Model
         private static string key = "?key=e2b5f2a662a214eb62a4cd0819a1f901";
         public static Restaurant GetRestaurantWithName(string name)
         {
-            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurants/search/fields?restaurant_name={name}0&exact=true"), null, "GET", "application/json", typeof(Restaurant));
+
+            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurant/", name, key), null, "GET", "application/json", typeof(Restaurant)); ;
             return selectedRestaurant;
         }
 
@@ -69,10 +70,10 @@ namespace M15_ProjecteConsumidor.Model
         {
             try
             {
-                HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest; //WebRequest WR = WebRequest.Create(requestUrl);   
+                HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest; //WebRequest WR = WebRequest.Create(requestUrl);
                 string sb = JsonConvert.SerializeObject(JSONRequest);
                 request.Method = JSONmethod;  // "GET"/"POST"/"PUT"/"DELETE";  
-                request.Headers.Add("X-API-KEY: ", "e2b5f2a662a214eb62a4cd0819a1f901");
+                //request.Headers.Add("X-API-KEY: ", "e2b5f2a662a214eb62a4cd0819a1f901");
                 if (JSONmethod != "GET")
                 {
                     request.ContentType = JSONContentType; // "application/json";   
@@ -90,7 +91,7 @@ namespace M15_ProjecteConsumidor.Model
                     Stream stream1 = response.GetResponseStream();
                     StreamReader sr = new StreamReader(stream1);
                     string strsb = sr.ReadToEnd();
-                    object objResponse = JsonConvert.DeserializeObject(strsb, JSONResponseType);
+                    Restaurant objResponse = JsonConvert.DeserializeObject<Restaurant>(strsb);
                     return objResponse;
                 }
             }

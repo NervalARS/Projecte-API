@@ -13,6 +13,7 @@ namespace M15_ProjecteConsumidor.Model
         public string restaurant_website { get; set; }
         public string hours { get; set; }
         public string price_range { get; set; }
+        public int price_range_num { get; set; }
         public long restaurant_id { get; set; }
         public List<string> cuisines { get; set; }
         public Address address { get; set; }
