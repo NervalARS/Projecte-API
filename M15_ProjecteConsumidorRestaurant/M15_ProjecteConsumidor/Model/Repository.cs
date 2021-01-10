@@ -13,52 +13,18 @@ namespace M15_ProjecteConsumidor.Model
 
         private static string ws1 = "https://api.documenu.com/v2/";
         private static string key = "?key=e2b5f2a662a214eb62a4cd0819a1f901";
-        public static Restaurant GetRestaurantWithName(string name)
+        public static Restaurant GetRestaurant(string name)
         {
 
-            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurant/", name, key), null, "GET", "application/json", typeof(Restaurant)); ;
+            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurant/", name, key), null, "GET", "application/json", typeof(Restaurant));
             return selectedRestaurant;
         }
 
-        public static List<MMenu> GetMenu(Restaurant restaurant)
+        public static Result GetRestaurantValues(Restaurant Restaurant)
         {
-            List<MMenu> menus = restaurant.menus;
-            return menus;
-        }
 
-        public static List<MenuSection> GetMenuSections(MMenu menu)
-        {
-            List<MenuSection> menuSections = menu.menu_sections;
-            return menuSections;
-        }
-
-        public static List<MenuItem> GetMenuItems(MenuSection menuSection)
-        {
-            List<MenuItem> menuItems = menuSection.menu_items;
-            return menuItems;
-        }
-
-        public static List<Pricing> GetPricings(MenuItem menuItem)
-        {
-            List<Pricing> pricings = menuItem.pricing;
-            return pricings;
-        }
-        public static Address GetAddress(Restaurant restaurant)
-        {
-            Address address = restaurant.address;
-            return address;
-        }
-
-        public static List<String> GetCuisines(Restaurant restaurant)
-        {
-            List<String> cuisines = restaurant.cuisines;
-            return cuisines;
-        }
-
-        public static Geo GetGeo(Restaurant restaurant)
-        {
-            Geo geo = restaurant.geo;
-            return geo;
+            Result RestaurantResult =  Restaurant.Result;
+            return RestaurantResult;
         }
 
         public static object MakeRequest(string requestUrl, object JSONRequest, string JSONmethod, string JSONContentType, Type JSONResponseType)
@@ -91,7 +57,7 @@ namespace M15_ProjecteConsumidor.Model
                     Stream stream1 = response.GetResponseStream();
                     StreamReader sr = new StreamReader(stream1);
                     string strsb = sr.ReadToEnd();
-                    Restaurant objResponse = JsonConvert.DeserializeObject<Restaurant>(strsb);
+                    object objResponse = JsonConvert.DeserializeObject<Restaurant>(strsb);
                     return objResponse;
                 }
             }

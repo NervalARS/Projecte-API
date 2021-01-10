@@ -80,15 +80,9 @@
     <Compile Include="Controlador\InicioController.cs" />
     <Compile Include="Controlador\MenuController.cs" />
     <Compile Include="Controlador\RestauranteController.cs" />
-    <Compile Include="Model\Address.cs" />
-    <Compile Include="Model\Geo.cs" />
-    <Compile Include="Model\RestaurantesFavoritos.cs" />
-    <Compile Include="Model\MMenu.cs" />
-    <Compile Include="Model\MenuItem.cs" />
-    <Compile Include="Model\MenuSection.cs" />
-    <Compile Include="Model\Pricing.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Restaurant.cs" />
+    <Compile Include="Model\RestaurantesFavoritos.cs" />
     <Compile Include="Vista\VInici.cs">
       <SubType>Form</SubType>
     </Compile>

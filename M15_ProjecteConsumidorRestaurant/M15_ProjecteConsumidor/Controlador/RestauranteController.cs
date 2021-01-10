@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using M15_ProjecteConsumidor.Model;
 
 namespace M15_ProjecteConsumidor.Controlador
 {
@@ -18,14 +19,14 @@ namespace M15_ProjecteConsumidor.Controlador
         double Glat;
         double Glon;
 
-        public RestauranteController(Restaurant RES, VInici VV)
+        public RestauranteController(Restaurant RESTAURANT, VInici VV)
         {
+            Result RES = Repository.GetRestaurantValues(RESTAURANT);
             //Preparo todas las variables
             V2=VV;
-            RES = Repository.GetRestaurantWithName("Panera Bread");
             if (RES!=null) {
-                Glat = RES.geo.lat;
-                Glon = RES.geo.lon;
+                Glat = RES.Geo.Lat;
+                Glon = RES.Geo.Lon;
             }
             else
             {
@@ -36,22 +37,22 @@ namespace M15_ProjecteConsumidor.Controlador
 
             //Inicio la app
             VR.ShowDialog();
-            VR.RES_Telefon.Text = "Telefon: " + RES.restaurant_phone ;
-            VR.RES_Horas.Text = "Horas: " + RES.hours;
-            VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.price_range;
-            VR.RES_Direccion.Text = "Direccio: " + RES.address;
-            if (RES.cuisines != null)
+            VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone ;
+            VR.RES_Horas.Text = "Horas: " + RES.Hours;
+            VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
+            VR.RES_Direccion.Text = "Direccio: " + RES.Address;
+            if (RES.Cuisines != null)
             {
-                foreach (string cuisines in RES.cuisines)
+                foreach (string cuisines in RES.Cuisines)
                 {
                     VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
                 }
             }
-            if (RES.menus != null)
+            if (RES.Menus != null)
             {
-                foreach (MMenu menu in RES.menus)
+                foreach (MMenu menu in RES.Menus)
                 {
-                    VR.RES_ListBoxDeTipoCocina.Items.Add(menu.menu_name);
+                    VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
                 }
             }
         }

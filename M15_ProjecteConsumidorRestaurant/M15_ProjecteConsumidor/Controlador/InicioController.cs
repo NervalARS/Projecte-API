@@ -77,7 +77,7 @@ namespace M15_ProjecteConsumidor.Controlador
         private void newViewRest(Object sender, EventArgs e)
         {
             //if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
-                Restaurant Res = Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text);
+                Restaurant Res = Repository.GetRestaurant(VI.PANEL_REST_TB_RESTID.Text);
              // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
             VI.Close();
                 RestauranteController RC = new RestauranteController(Res, VI);
