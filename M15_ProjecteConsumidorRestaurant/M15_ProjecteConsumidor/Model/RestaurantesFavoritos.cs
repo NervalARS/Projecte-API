@@ -8,29 +8,29 @@ namespace M15_ProjecteConsumidor.Model
 {
     class RestaurantesFavoritos
     {
-        private List<Restaurant> List = new List<Restaurant>();
+        private List<Result> List = new List<Result>();
 
         public RestaurantesFavoritos()
         {
 
         }
 
-        public void addToFav(Restaurant r)
+        public void addToFav(Result r)
         {
             this.List.Add(r);
         }
 
-        public void delToFav(Restaurant r)
+        public void delToFav(Result r)
         {
             this.List.Remove(r);
         }
 
-        public List<Restaurant> getFavRes()
+        public List<Result> getFavRes()
         {
             return this.List;
         }
 
-        public void setFavRes(List<Restaurant> l)
+        public void setFavRes(List<Result> l)
         {
             this.List = l;
         }

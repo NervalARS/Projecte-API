@@ -12,7 +12,7 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class RestauranteController
     {
-        Restaurant RES;
+        Result RES;
         RestaurantesFavoritos FAV;
         VRestaurante VR;
         VInici V2;
@@ -21,7 +21,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         public RestauranteController(Restaurant RESTAURANT, VInici VV)
         {
-            Result RES = Repository.GetRestaurantValues(RESTAURANT);
+            RES = Repository.GetRestaurantValues(RESTAURANT);
             //Preparo todas las variables
             V2=VV;
             if (RES!=null) {
