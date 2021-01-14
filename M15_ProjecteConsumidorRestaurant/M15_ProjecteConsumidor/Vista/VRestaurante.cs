@@ -208,5 +208,10 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

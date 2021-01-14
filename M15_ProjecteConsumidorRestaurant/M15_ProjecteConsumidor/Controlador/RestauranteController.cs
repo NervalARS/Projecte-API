@@ -6,14 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using M15_ProjecteConsumidor.Model;
 
 namespace M15_ProjecteConsumidor.Controlador
 {
     class RestauranteController
     {
         Result RES;
-        RestaurantesFavoritos FAV;
         VRestaurante VR;
         VInici V2;
         double Glat;
@@ -21,6 +19,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         public RestauranteController(Restaurant RESTAURANT, VInici VV)
         {
+            RES = RESTAURANT.Result;
             RES = Repository.GetRestaurantValues(RESTAURANT);
             //Preparo todas las variables
             V2=VV;
@@ -36,11 +35,12 @@ namespace M15_ProjecteConsumidor.Controlador
             VR = new VRestaurante(Glat, Glon); // Aqui tienes que poner la Latitud primero, Longitud segundo, en formato double
 
             //Inicio la app
-            VR.ShowDialog();
+            VR.RES_Nom_ID.Text = "Nom Restaurant: "+RES.RestaurantName;
             VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone ;
             VR.RES_Horas.Text = "Horas: " + RES.Hours;
             VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
-            VR.RES_Direccion.Text = "Direccio: " + RES.Address;
+            VR.RES_Direccion.Text = "Direccio:"+ RES.Address.Street +", " + RES.Address.City + ", " + RES.Address.PostalCode + ", " + RES.Address.State;
+            VR.RES_LastMod.Text = "Ultima Modificacion: " + RES.LastUpdated;
             if (RES.Cuisines != null)
             {
                 foreach (string cuisines in RES.Cuisines)
@@ -50,33 +50,52 @@ namespace M15_ProjecteConsumidor.Controlador
             }
             if (RES.Menus != null)
             {
-                foreach (MMenu menu in RES.Menus)
+                List<MMenu> LM = RES.Menus;
+                foreach (MMenu M in LM)
                 {
-                    VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
+                    VR.comboBox1.Items.Add(M.MenuName);
                 }
             }
+            VR.ShowDialog();
         }
 
         private void InitListeners()
         {
-            VR.RES_BT_AddFav.Click += AddFavRestaurant;
             VR.RES_BT_ShowMenu.Click += showMenu;
-            VR.BT_EXIT.Click += exitapp; 
+            VR.BT_EXIT.Click += exitapp;
+            VR.comboBox1.SelectedIndexChanged += CBSelected;
+            VR.RES_DGV_Menus.SelectionChanged += SelectedRow;
         }
 
-        private void AddFavRestaurant(Object sender, EventArgs e)
-        {
-            FAV.addToFav(RES);
-        }
-        
         private void showMenu(Object sender, EventArgs e)
         {
-            //MenuController MEN_CON = new MenuController(VR.RES_DGV_Menus.SelectedRows);
+           // MenuController MEN_CON = new MenuController();
         }
 
         private void exitapp(Object sender, EventArgs e)
         {
             VR.Close();   
         }
+
+        private void CBSelected(Object sender, EventArgs e)
+        {
+            if (!VR.comboBox1.Text.Equals(null))
+            {
+                foreach (MMenu M in RES.Menus)
+                {
+                    if (M.Equals(VR.comboBox1.Text))
+                    {
+                        VR.RES_DGV_Menus.DataSource = M.MenuSections;
+                    }
+                }
+            }
+        }
+
+        private void SelectedRow(Object sender, EventArgs e)
+        {
+           
+        }
+
+
     }
 }

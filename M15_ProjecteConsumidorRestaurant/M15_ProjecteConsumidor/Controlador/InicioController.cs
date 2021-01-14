@@ -11,21 +11,18 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class InicioController
     {
-        RestaurantesFavoritos RF {get; set;}
 
-    VInici VI = new VInici();
+        VInici VI = new VInici();
         public InicioController()
         {
             try
             {
-                FavRestCargarList();
                 InitListeners();
-                VI.PANEL_INICI.BringToFront();
                 Application.Run(VI);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error en el InicioController.cs");
+                Console.WriteLine("Error en el InicioController.cs" + e);
             }
         }
 
@@ -35,7 +32,6 @@ namespace M15_ProjecteConsumidor.Controlador
             #region | Botones Menu
             VI.BT_SHOW_RESTAURANTS.Click += showRestaurant;
             VI.BT_SHOW_MENUS.Click += showMenu;
-            VI.BT_SHOW_FAV_RESTAURANTS.Click += showFavRest;
             VI.BT_EXIT.Click += Exit;
             #endregion
             #region | Panel Restaurante
@@ -43,9 +39,6 @@ namespace M15_ProjecteConsumidor.Controlador
             #endregion
             #region | Panel Menu
             VI.PANEL_MENU_BT.Click += newViewMenu;
-            #endregion
-            #region | Panel Restaurantes Favoritos
-            VI.PANEL_FAV_BT.Click += newViewFav;
             #endregion
         }
         #endregion
@@ -61,13 +54,7 @@ namespace M15_ProjecteConsumidor.Controlador
             VI.PANEL_MENU.BringToFront();
         }
 
-        private void showFavRest(Object sender, EventArgs e)
-        {
-            FavRestCargarList();
-            VI.PANEL_FAV.BringToFront();
-        }
-
-        private void Exit(Object sender, EventArgs e)
+       private void Exit(Object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -76,12 +63,15 @@ namespace M15_ProjecteConsumidor.Controlador
         #region | Controladores Panel Restaurante
         private void newViewRest(Object sender, EventArgs e)
         {
-            //if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
+            try {
                 Restaurant Res = Repository.GetRestaurant(VI.PANEL_REST_TB_RESTID.Text);
-             // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
-            VI.Close();
-                RestauranteController RC = new RestauranteController(Res, VI);
-            //}
+                RestauranteController RC = new RestauranteController(Res, this.VI);
+                
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: "+exc);
+            }
         }
         #endregion
 
@@ -94,36 +84,9 @@ namespace M15_ProjecteConsumidor.Controlador
         }
         #endregion
 
-        #region | Controlador Panel Favoritos
-        private void newViewFav(Object sender, EventArgs e)
-        {
-            Restaurant ResFav = new Restaurant();
-
-            if (RF != null)
-            {
-                ResFav = (Restaurant)VI.PANEL_FAV_LIST.SelectedItem;
-                RestauranteController RC = new RestauranteController(ResFav, VI);
-                
-            }            
-        }
-        #endregion
-
+       
         #region | Otros Métodos
-        private void FavRestCargarList()
-        {
-            if (RF!=null)
-            {
-                VI.PANEL_FAV_LIST.Items.Add("Inicio");
-                foreach (Restaurant rest in this.RF.getFavRes())
-                {
-                    VI.PANEL_FAV_LIST.Items.Add(rest);
-                }
-            }
-            else
-            {
-
-            }
-        }
+        
         #endregion
     }
 }

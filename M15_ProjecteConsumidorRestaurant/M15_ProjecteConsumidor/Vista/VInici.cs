@@ -146,5 +146,10 @@ namespace M15_ProjecteConsumidor.Vista
         {
 
         }
+
+        private void VInici_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
