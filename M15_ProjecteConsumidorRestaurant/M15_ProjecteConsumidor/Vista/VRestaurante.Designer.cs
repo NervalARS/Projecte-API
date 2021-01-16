@@ -47,9 +47,9 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_TipoMoneda = new System.Windows.Forms.Label();
             this.RES_DGV_Menus = new System.Windows.Forms.DataGridView();
             this.RES_Horas = new System.Windows.Forms.Label();
-            this.RES_BT_AddFav = new System.Windows.Forms.Button();
             this.RES_Title3 = new System.Windows.Forms.Label();
             this.RES_Title4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RES_DGV_Menus)).BeginInit();
@@ -114,6 +114,7 @@ namespace M15_ProjecteConsumidor.Vista
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.btnRelieve);
             this.panel2.Controls.Add(this.btnOriginal);
             this.panel2.Controls.Add(this.btnSat);
@@ -128,7 +129,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel2.Controls.Add(this.RES_TipoMoneda);
             this.panel2.Controls.Add(this.RES_DGV_Menus);
             this.panel2.Controls.Add(this.RES_Horas);
-            this.panel2.Controls.Add(this.RES_BT_AddFav);
             this.panel2.Controls.Add(this.RES_Title3);
             this.panel2.Controls.Add(this.RES_Title4);
             this.panel2.Location = new System.Drawing.Point(0, 77);
@@ -142,7 +142,7 @@ namespace M15_ProjecteConsumidor.Vista
             // 
             this.btnRelieve.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRelieve.ForeColor = System.Drawing.Color.White;
-            this.btnRelieve.Location = new System.Drawing.Point(819, 915);
+            this.btnRelieve.Location = new System.Drawing.Point(339, 471);
             this.btnRelieve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRelieve.Name = "btnRelieve";
             this.btnRelieve.Size = new System.Drawing.Size(112, 35);
@@ -155,7 +155,7 @@ namespace M15_ProjecteConsumidor.Vista
             // 
             this.btnOriginal.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnOriginal.ForeColor = System.Drawing.Color.White;
-            this.btnOriginal.Location = new System.Drawing.Point(699, 915);
+            this.btnOriginal.Location = new System.Drawing.Point(219, 471);
             this.btnOriginal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOriginal.Name = "btnOriginal";
             this.btnOriginal.Size = new System.Drawing.Size(112, 35);
@@ -168,7 +168,7 @@ namespace M15_ProjecteConsumidor.Vista
             // 
             this.btnSat.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSat.ForeColor = System.Drawing.Color.White;
-            this.btnSat.Location = new System.Drawing.Point(939, 915);
+            this.btnSat.Location = new System.Drawing.Point(459, 471);
             this.btnSat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSat.Name = "btnSat";
             this.btnSat.Size = new System.Drawing.Size(112, 35);
@@ -283,7 +283,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(1017, 397);
+            this.gMapControl1.Size = new System.Drawing.Size(1017, 456);
             this.gMapControl1.TabIndex = 39;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.Load += new System.EventHandler(this.RES_GMAP_Load);
@@ -327,26 +327,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Horas.Text = "Horas";
             this.RES_Horas.Click += new System.EventHandler(this.RES_Horas_Click);
             // 
-            // RES_BT_AddFav
-            // 
-            this.RES_BT_AddFav.AllowDrop = true;
-            this.RES_BT_AddFav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RES_BT_AddFav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.RES_BT_AddFav.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
-            this.RES_BT_AddFav.FlatAppearance.BorderSize = 0;
-            this.RES_BT_AddFav.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.RES_BT_AddFav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RES_BT_AddFav.ForeColor = System.Drawing.Color.White;
-            this.RES_BT_AddFav.Location = new System.Drawing.Point(38, 914);
-            this.RES_BT_AddFav.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.RES_BT_AddFav.Name = "RES_BT_AddFav";
-            this.RES_BT_AddFav.Size = new System.Drawing.Size(348, 55);
-            this.RES_BT_AddFav.TabIndex = 38;
-            this.RES_BT_AddFav.Text = "Añadir Restaurante a Favoritos";
-            this.RES_BT_AddFav.UseVisualStyleBackColor = false;
-            this.RES_BT_AddFav.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // RES_Title3
             // 
             this.RES_Title3.AutoSize = true;
@@ -369,6 +349,15 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Title4.TabIndex = 26;
             this.RES_Title4.Text = "Localizacion:";
             this.RES_Title4.Click += new System.EventHandler(this.RES_Title4_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(699, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(350, 28);
+            this.comboBox1.TabIndex = 52;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // VRestaurante
             // 
@@ -396,7 +385,6 @@ namespace M15_ProjecteConsumidor.Vista
         public System.Windows.Forms.Label RES_Nom_ID;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label RES_LastMod;
-        public System.Windows.Forms.Button RES_BT_AddFav;
         public System.Windows.Forms.Label RES_Title4;
         public GMap.NET.WindowsForms.GMapControl gMapControl1;
         public System.Windows.Forms.Button RES_BT_ShowMenu;
@@ -413,5 +401,6 @@ namespace M15_ProjecteConsumidor.Vista
         public System.Windows.Forms.Button btnRelieve;
         public System.Windows.Forms.Button btnOriginal;
         public System.Windows.Forms.Button btnSat;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }

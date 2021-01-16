@@ -13,32 +13,26 @@ namespace M15_ProjecteConsumidor.Controlador
     class RestauranteController
     {
         Result RES;
-        RestaurantesFavoritos FAV;
         VRestaurante VR;
         VInici V2;
         double Glat;
         double Glon;
-        MMenu MmenuGlobal;
+        Model.MMenu MmenuGlobal;
 
         public RestauranteController(Restaurant RESTAURANT, VInici VV)
         {
-<<<<<<< Updated upstream
-            RES = Repository.GetRestaurantValues(RESTAURANT);
-            //Preparo todas las variables
-            V2=VV;
-            if (RES!=null) {
-                Glat = RES.Geo.Lat;
-                Glon = RES.Geo.Lon;
-            }
-            else
-=======
             try
->>>>>>> Stashed changes
             {
+                this.V2 = VV; //Esto guardara la vista inicio
+                V2.Close(); //Cerramos el inicio
+
+                //Esto recoge el restaurante requerido
                 RES = RESTAURANT.Result;
                 RES = Repository.GetRestaurantValues(RESTAURANT);
-                //Preparo todas las variables
-                V2 = VV;
+
+
+                //Si el restaurante es null, le assignara al mapa el triangulo de las vermidas para hacer la broma xD
+                //si no pues coge las coorenadas del restaurante y se las ensenya (no tengo la enye en el teclado, luego lo cambias xD)
                 if (RES != null)
                 {
                     Glat = RES.Geo.Lat;
@@ -49,85 +43,73 @@ namespace M15_ProjecteConsumidor.Controlador
                     Glat = 32.296934;
                     Glon = -64.793031;
                 }
-                VR = new VRestaurante(Glat, Glon); // Aqui tienes que poner la Latitud primero, Longitud segundo, en formato double
 
-<<<<<<< Updated upstream
-            //Inicio la app
-            VR.ShowDialog();
-            VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone ;
-            VR.RES_Horas.Text = "Horas: " + RES.Hours;
-            VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
-            VR.RES_Direccion.Text = "Direccio: " + RES.Address;
-            if (RES.Cuisines != null)
-            {
-                foreach (string cuisines in RES.Cuisines)
-=======
-                //Inicio la app
+                //Aqui le pasamos al metodo que esta dentro de la vista las cooredanas para que las assigne al mapa
+                VR = new VRestaurante(Glat, Glon);
+
+                //Abrimos la vista
+                VR.ShowDialog();
+
+                //Assigno los datos BASICOS del restaurante a la interfaz
                 VR.RES_Nom_ID.Text = "Nom Restaurant: " + RES.RestaurantName;
                 VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone;
                 VR.RES_Horas.Text = "Horas: " + RES.Hours;
                 VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
-                VR.RES_Direccion.Text = "Direccio:" + RES.Address.Street + ", " + RES.Address.City + ", " + RES.Address.PostalCode + ", " + RES.Address.State;
+                VR.RES_Direccion.Text = "Direccio: " + RES.Address;
                 VR.RES_LastMod.Text = "Ultima Modificacion: " + RES.LastUpdated;
+
+                //Tipo de cocina (LISTA)
                 if (RES.Cuisines != null)
->>>>>>> Stashed changes
                 {
                     foreach (string cuisines in RES.Cuisines)
                     {
                         VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
                     }
                 }
-<<<<<<< Updated upstream
-            }
-            if (RES.Menus != null)
-            {
-                foreach (MMenu menu in RES.Menus)
-                {
-                    VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
-=======
+
+                //Combo box Menus
                 if (RES.Menus != null)
                 {
-                    List<MMenu> LM = RES.Menus;
-                    foreach (MMenu M in LM)
+                    foreach (MMenu menu in RES.Menus)
                     {
-                        VR.comboBox1.Items.Add(M.MenuName);
+                        VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
+                        if (RES.Menus != null)
+                        {
+                            List<MMenu> LM = RES.Menus;
+                            foreach (MMenu M in LM)
+                            {
+                                VR.comboBox1.Items.Add(M.MenuName);
+                            }
+                        }
+                        InitListeners();
+                        VR.ShowDialog();
                     }
->>>>>>> Stashed changes
                 }
-                InitListeners();
-                VR.ShowDialog();
+
+
+
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error en constructor del restaurante vista: "+ex);
+                Console.WriteLine("Error: "+ex);
             }
         }
 
         private void InitListeners()
         {
-            VR.RES_BT_AddFav.Click += AddFavRestaurant;
             VR.RES_BT_ShowMenu.Click += showMenu;
-<<<<<<< Updated upstream
             VR.BT_EXIT.Click += exitapp; 
-=======
             VR.BT_EXIT.Click += exitapp;
             VR.comboBox1.SelectedIndexChanged += CBSelected;
->>>>>>> Stashed changes
         }
 
-        private void AddFavRestaurant(Object sender, EventArgs e)
-        {
-            FAV.addToFav(RES);
-        }
-        
         private void showMenu(Object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
             //MenuController MEN_CON = new MenuController(VR.RES_DGV_Menus.SelectedRows);
-=======
-            if (!VR.RES_DGV_Menus.SelectedRows.Count > 0)
+            if (!(VR.RES_DGV_Menus.SelectedRows.Count > 0))
             {
-                string s = VR.RES_DGV_Menus.SelectedRows[0].Cells[0];
+                string s ="" + VR.RES_DGV_Menus.SelectedRows[0].Cells[0];
                 foreach (MenuSection MS in MmenuGlobal)
                 {
                     if (MS.SectionName.Equals(s))
@@ -137,15 +119,12 @@ namespace M15_ProjecteConsumidor.Controlador
                     }
                 }
             }
->>>>>>> Stashed changes
         }
 
         private void exitapp(Object sender, EventArgs e)
         {
             VR.Close();   
         }
-<<<<<<< Updated upstream
-=======
 
         private void CBSelected(Object sender, EventArgs e)
         {
@@ -161,6 +140,5 @@ namespace M15_ProjecteConsumidor.Controlador
                 }
             }
         }
->>>>>>> Stashed changes
     }
 }

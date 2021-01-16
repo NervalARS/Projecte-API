@@ -11,14 +11,12 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class InicioController
     {
-        RestaurantesFavoritos RF {get; set;}
-
-    VInici VI = new VInici();
+        
+        VInici VI = new VInici();
         public InicioController()
         {
             try
             {
-                FavRestCargarList();
                 InitListeners();
                 VI.PANEL_INICI.BringToFront();
                 Application.Run(VI);
@@ -44,9 +42,6 @@ namespace M15_ProjecteConsumidor.Controlador
             #region | Panel Menu
             VI.PANEL_MENU_BT.Click += newViewMenu;
             #endregion
-            #region | Panel Restaurantes Favoritos
-            VI.PANEL_FAV_BT.Click += newViewFav;
-            #endregion
         }
         #endregion
 
@@ -63,7 +58,6 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void showFavRest(Object sender, EventArgs e)
         {
-            FavRestCargarList();
             VI.PANEL_FAV.BringToFront();
         }
 
@@ -88,42 +82,14 @@ namespace M15_ProjecteConsumidor.Controlador
         #region | Controladores Panel Menus
         private void newViewMenu(Object sender, EventArgs e)
         {
-            MMenu Men = new MMenu();
+            Model.MMenu Men = new Model.MMenu();
             // Mas o menos xD | ResFav = VI.PANEL_MENU_DGV.SelectedRows;
-            MenuController MC = new MenuController(Men);
-        }
-        #endregion
-
-        #region | Controlador Panel Favoritos
-        private void newViewFav(Object sender, EventArgs e)
-        {
-            Restaurant ResFav = new Restaurant();
-
-            if (RF != null)
-            {
-                ResFav = (Restaurant)VI.PANEL_FAV_LIST.SelectedItem;
-                RestauranteController RC = new RestauranteController(ResFav, VI);
-                
-            }            
+            //MenuController MC = new MenuController(Men.MenuSections);
         }
         #endregion
 
         #region | Otros Métodos
-        private void FavRestCargarList()
-        {
-            if (RF!=null)
-            {
-                VI.PANEL_FAV_LIST.Items.Add("Inicio");
-                foreach (Restaurant rest in this.RF.getFavRes())
-                {
-                    VI.PANEL_FAV_LIST.Items.Add(rest);
-                }
-            }
-            else
-            {
-
-            }
-        }
+        
         #endregion
     }
 }

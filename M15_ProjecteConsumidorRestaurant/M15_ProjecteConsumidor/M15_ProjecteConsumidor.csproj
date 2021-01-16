@@ -82,7 +82,6 @@
     <Compile Include="Controlador\RestauranteController.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Restaurant.cs" />
-    <Compile Include="Model\RestaurantesFavoritos.cs" />
     <Compile Include="Vista\VInici.cs">
       <SubType>Form</SubType>
     </Compile>
