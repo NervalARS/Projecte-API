@@ -13,18 +13,11 @@ namespace M15_ProjecteConsumidor.Controlador
     {
         VMenu VM = new VMenu();
         Model.MMenu MEN = new Model.MMenu();
-        List<Model.MenuItem> ListMenItem;
-        public MenuController(List<Model.MenuItem> s)
-        {
-            this.ListMenItem = s;
-            carga();
-            InitListeners();
-            VM.ShowDialog();
-        }
+        MenuSection ListMenItem;
 
         public MenuController(MenuSection MS)
         {
-            this.ListMenItem = s;
+            this.ListMenItem = MS;
             carga();
             InitListeners();
             VM.ShowDialog();
@@ -32,7 +25,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void carga()
         {
-            VM.dataGridView1.DataSource = ListMenItem;
+            VM.dataGridView1.DataSource = ListMenItem.MenuItems;
         }
 
         private void InitListeners()
@@ -56,9 +49,12 @@ namespace M15_ProjecteConsumidor.Controlador
             if (e.RowIndex >= 0)
             {
                 int i = e.RowIndex;
-                this.VM.label1.Text = this.ListMenItem[i].Name;
-                this.VM.label4.Text = this.ListMenItem[i].Description;
-                this.VM.label3.Text = "" + this.ListMenItem[i].Price;
+
+                Model.MenuItem M = ListMenItem.MenuItems[i];
+
+                this.VM.label1.Text = "Nom Menu: "+M.Name;
+                this.VM.label4.Text = "" + M.Price+"$";
+                this.VM.label3.Text = "Descripcion: " + M.Description;
             }
         }
 

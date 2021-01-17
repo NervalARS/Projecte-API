@@ -25,71 +25,69 @@ namespace M15_ProjecteConsumidor.Controlador
             try
             {
                 this.V2 = VV; //Esto guardara la vista inicio
-                V2.Close(); //Cerramos el inicio
-
-                //Esto recoge el restaurante requerido
-                RES = RESTAURANT.Result;
-                RES = Repository.GetRestaurantValues(RESTAURANT);
-
-
-                //Si el restaurante es null, le assignara al mapa el triangulo de las vermidas para hacer la broma xD
-                //si no pues coge las coorenadas del restaurante y se las ensenya (no tengo la enye en el teclado, luego lo cambias xD)
-                if (RES != null)
+                if(RESTAURANT != null)
                 {
-                    Glat = RES.Geo.Lat;
-                    Glon = RES.Geo.Lon;
+                    //Esto recoge el restaurante requerido
+                    RES = RESTAURANT.Result;
+
+                    //Si el restaurante es null, le assignara al mapa el triangulo de las vermidas para hacer la broma xD
+                    //si no pues coge las coorenadas del restaurante y se las ensenya (no tengo la enye en el teclado, luego lo cambias xD)
+                    if (RES != null)
+                    {
+                        Glat = RES.Geo.Lat;
+                        Glon = RES.Geo.Lon;
+                    }
+                    else
+                    {
+                        Glat = 32.296934;
+                        Glon = -64.793031;
+                    }
+
+                    //Aqui le pasamos al metodo que esta dentro de la vista las cooredanas para que las assigne al mapa
+                    VR = new VRestaurante(Glat, Glon);
+
+                    //Assigno los datos BASICOS del restaurante a la interfaz
+                    VR.RES_Nom_ID.Text = "Nom Restaurant: " + RES.RestaurantName;
+                    VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone;
+                    VR.RES_Horas.Text = "Horas: " + RES.Hours;
+                    VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
+                    VR.RES_Direccion.Text = "Direccio: " + RES.Address;
+                    VR.RES_LastMod.Text = "Ultima Modificacion: " + RES.LastUpdated;
+
+                    //Tipo de cocina (LISTA)
+                    if (RES.Cuisines != null)
+                    {
+                        foreach (string cuisines in RES.Cuisines)
+                        {
+                            VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
+                        }
+                    }
+
+                    //Combo box Menus
+                    if (RES.Menus != null)
+                    {
+                        foreach (MMenu menu in RES.Menus)
+                        {
+                            VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
+                            if (RES.Menus != null)
+                            {
+                                List<MMenu> LM = RES.Menus;
+                                foreach (MMenu M in LM)
+                                {
+                                    VR.comboBox1.Items.Add(M.MenuName);
+                                }
+                            }
+
+                        }
+                    }
                 }
-                else
+                if (RES == null)
                 {
                     Glat = 32.296934;
                     Glon = -64.793031;
                 }
-
-                //Aqui le pasamos al metodo que esta dentro de la vista las cooredanas para que las assigne al mapa
-                VR = new VRestaurante(Glat, Glon);
-
-                //Abrimos la vista
+                InitListeners();
                 VR.ShowDialog();
-
-                //Assigno los datos BASICOS del restaurante a la interfaz
-                VR.RES_Nom_ID.Text = "Nom Restaurant: " + RES.RestaurantName;
-                VR.RES_Telefon.Text = "Telefon: " + RES.RestaurantPhone;
-                VR.RES_Horas.Text = "Horas: " + RES.Hours;
-                VR.RES_TipoMoneda.Text = "Tipus de moneda: " + RES.PriceRange;
-                VR.RES_Direccion.Text = "Direccio: " + RES.Address;
-                VR.RES_LastMod.Text = "Ultima Modificacion: " + RES.LastUpdated;
-
-                //Tipo de cocina (LISTA)
-                if (RES.Cuisines != null)
-                {
-                    foreach (string cuisines in RES.Cuisines)
-                    {
-                        VR.RES_ListBoxDeTipoCocina.Items.Add(cuisines);
-                    }
-                }
-
-                //Combo box Menus
-                if (RES.Menus != null)
-                {
-                    foreach (MMenu menu in RES.Menus)
-                    {
-                        VR.RES_ListBoxDeTipoCocina.Items.Add(menu.MenuName);
-                        if (RES.Menus != null)
-                        {
-                            List<MMenu> LM = RES.Menus;
-                            foreach (MMenu M in LM)
-                            {
-                                VR.comboBox1.Items.Add(M.MenuName);
-                            }
-                        }
-                        InitListeners();
-                        VR.ShowDialog();
-                    }
-                }
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -109,7 +107,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void selectedMenuSelection(Object sender, DataGridViewCellEventArgs e)
         {
-            indexselected
+            indexselected = e.RowIndex;
         }
 
         private void showMenu(Object sender, EventArgs e)

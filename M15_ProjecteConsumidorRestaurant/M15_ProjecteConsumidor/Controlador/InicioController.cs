@@ -32,15 +32,10 @@ namespace M15_ProjecteConsumidor.Controlador
         {
             #region | Botones Menu
             VI.BT_SHOW_RESTAURANTS.Click += showRestaurant;
-            VI.BT_SHOW_MENUS.Click += showMenu;
-            VI.BT_SHOW_FAV_RESTAURANTS.Click += showFavRest;
             VI.BT_EXIT.Click += Exit;
             #endregion
             #region | Panel Restaurante
             VI.PANEL_REST_BT.Click += newViewRest;
-            #endregion
-            #region | Panel Menu
-            VI.PANEL_MENU_BT.Click += newViewMenu;
             #endregion
         }
         #endregion
@@ -51,16 +46,7 @@ namespace M15_ProjecteConsumidor.Controlador
             VI.PANEL_REST.BringToFront();
         }
 
-        private void showMenu(Object sender, EventArgs e)
-        {
-            VI.PANEL_MENU.BringToFront();
-        }
-
-        private void showFavRest(Object sender, EventArgs e)
-        {
-            VI.PANEL_FAV.BringToFront();
-        }
-
+        
         private void Exit(Object sender, EventArgs e)
         {
             Application.Exit();
@@ -70,21 +56,21 @@ namespace M15_ProjecteConsumidor.Controlador
         #region | Controladores Panel Restaurante
         private void newViewRest(Object sender, EventArgs e)
         {
-            //if (Repository.GetRestaurantWithName(VI.PANEL_REST_TB_RESTID.Text)!=null) {
-                Restaurant Res = Repository.GetRestaurant(VI.PANEL_REST_TB_RESTID.Text);
-             // Mas o menos xD | ResFav = VI.PANEL_REST_DGV.SelectedRows;
-            VI.Close();
-                RestauranteController RC = new RestauranteController(Res, VI);
-            //}
-        }
-        #endregion
-
-        #region | Controladores Panel Menus
-        private void newViewMenu(Object sender, EventArgs e)
-        {
-            Model.MMenu Men = new Model.MMenu();
-            // Mas o menos xD | ResFav = VI.PANEL_MENU_DGV.SelectedRows;
-            //MenuController MC = new MenuController(Men.MenuSections);
+            try
+            {
+                long ID = long.Parse(VI.PANEL_REST_TB_RESTID.Text);
+                Restaurant Res = Repository.GetRestaurant(ID);
+                if (Res != null)
+                {
+                    RestauranteController RC = new RestauranteController(Res, VI);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: "+ex);
+            }
+            
+            
         }
         #endregion
 

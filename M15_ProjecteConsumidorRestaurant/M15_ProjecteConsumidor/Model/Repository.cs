@@ -13,10 +13,10 @@ namespace M15_ProjecteConsumidor.Model
 
         private static string ws1 = "https://api.documenu.com/v2/";
         private static string key = "?key=e2b5f2a662a214eb62a4cd0819a1f901";
-        public static Restaurant GetRestaurant(string name)
+        public static Restaurant GetRestaurant(long id)
         {
 
-            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurant/", name, key), null, "GET", "application/json", typeof(Restaurant));
+            selectedRestaurant = (Restaurant)MakeRequest(string.Concat(ws1, "restaurant/", id, key), null, "GET", "application/json", typeof(Restaurant));
             return selectedRestaurant;
         }
 

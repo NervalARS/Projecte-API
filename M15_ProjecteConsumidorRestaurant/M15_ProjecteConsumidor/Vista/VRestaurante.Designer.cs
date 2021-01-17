@@ -34,6 +34,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Nom_ID = new System.Windows.Forms.Label();
             this.RES_LastMod = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnRelieve = new System.Windows.Forms.Button();
             this.btnOriginal = new System.Windows.Forms.Button();
             this.btnSat = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Horas = new System.Windows.Forms.Label();
             this.RES_Title3 = new System.Windows.Forms.Label();
             this.RES_Title4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RES_DGV_Menus)).BeginInit();
@@ -102,9 +102,10 @@ namespace M15_ProjecteConsumidor.Vista
             // RES_LastMod
             // 
             this.RES_LastMod.AutoSize = true;
+            this.RES_LastMod.Dock = System.Windows.Forms.DockStyle.Right;
             this.RES_LastMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RES_LastMod.ForeColor = System.Drawing.Color.Black;
-            this.RES_LastMod.Location = new System.Drawing.Point(867, 9);
+            this.RES_LastMod.Location = new System.Drawing.Point(1353, 0);
             this.RES_LastMod.Name = "RES_LastMod";
             this.RES_LastMod.Size = new System.Drawing.Size(182, 20);
             this.RES_LastMod.TabIndex = 13;
@@ -137,6 +138,15 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel2.Size = new System.Drawing.Size(1084, 995);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(699, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(350, 28);
+            this.comboBox1.TabIndex = 52;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnRelieve
             // 
@@ -349,15 +359,6 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_Title4.TabIndex = 26;
             this.RES_Title4.Text = "Localizacion:";
             this.RES_Title4.Click += new System.EventHandler(this.RES_Title4_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(699, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(350, 28);
-            this.comboBox1.TabIndex = 52;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // VRestaurante
             // 
