@@ -50,10 +50,10 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
             this.panel1.Controls.Add(this.BT_EXIT);
             this.panel1.Controls.Add(this.MEN_Nom);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 53);
+            this.panel1.Size = new System.Drawing.Size(1080, 82);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -68,9 +68,10 @@ namespace M15_ProjecteConsumidor.Vista
             this.BT_EXIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_EXIT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.BT_EXIT.ForeColor = System.Drawing.Color.White;
-            this.BT_EXIT.Location = new System.Drawing.Point(488, 9);
+            this.BT_EXIT.Location = new System.Drawing.Point(732, 14);
+            this.BT_EXIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BT_EXIT.Name = "BT_EXIT";
-            this.BT_EXIT.Size = new System.Drawing.Size(221, 36);
+            this.BT_EXIT.Size = new System.Drawing.Size(332, 55);
             this.BT_EXIT.TabIndex = 48;
             this.BT_EXIT.Text = "Volver a Inicio";
             this.BT_EXIT.UseVisualStyleBackColor = false;
@@ -80,8 +81,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.MEN_Nom.AutoSize = true;
             this.MEN_Nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MEN_Nom.ForeColor = System.Drawing.Color.White;
-            this.MEN_Nom.Location = new System.Drawing.Point(13, 15);
-            this.MEN_Nom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MEN_Nom.Location = new System.Drawing.Point(20, 23);
             this.MEN_Nom.Name = "MEN_Nom";
             this.MEN_Nom.Size = new System.Drawing.Size(95, 31);
             this.MEN_Nom.TabIndex = 0;
@@ -92,8 +92,7 @@ namespace M15_ProjecteConsumidor.Vista
             // 
             this.RES_Title1.AutoSize = true;
             this.RES_Title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RES_Title1.Location = new System.Drawing.Point(13, 13);
-            this.RES_Title1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RES_Title1.Location = new System.Drawing.Point(20, 20);
             this.RES_Title1.Name = "RES_Title1";
             this.RES_Title1.Size = new System.Drawing.Size(195, 25);
             this.RES_Title1.TabIndex = 37;
@@ -106,10 +105,10 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.RES_Title1);
-            this.panel3.Location = new System.Drawing.Point(-1, 52);
+            this.panel3.Location = new System.Drawing.Point(-2, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(723, 458);
+            this.panel3.Size = new System.Drawing.Size(1084, 705);
             this.panel3.TabIndex = 14;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -119,36 +118,35 @@ namespace M15_ProjecteConsumidor.Vista
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(18, 232);
+            this.panel2.Location = new System.Drawing.Point(27, 357);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 194);
+            this.panel2.Size = new System.Drawing.Size(1017, 298);
             this.panel2.TabIndex = 45;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MV Boli", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("MV Boli", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(417, 52);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(705, 109);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(246, 87);
+            this.label4.Size = new System.Drawing.Size(146, 63);
             this.label4.TabIndex = 47;
-            this.label4.Text = "0.00€";
+            this.label4.Text = "0.00";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(34, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.MaximumSize = new System.Drawing.Size(200, 500);
+            this.label3.Location = new System.Drawing.Point(55, 88);
+            this.label3.MaximumSize = new System.Drawing.Size(300, 769);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 46;
             this.label3.Text = "Descripción:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -158,8 +156,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(51, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 45;
@@ -169,21 +166,23 @@ namespace M15_ProjecteConsumidor.Vista
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 78);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(678, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(1017, 231);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // VMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 504);
+            this.ClientSize = new System.Drawing.Size(1074, 775);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.VMenu_Load);

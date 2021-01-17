@@ -14,9 +14,11 @@ namespace M15_ProjecteConsumidor.Controlador
         VMenu VM = new VMenu();
         Model.MMenu MEN = new Model.MMenu();
         MenuSection ListMenItem;
+        string moneda;
 
-        public MenuController(MenuSection MS)
+        public MenuController(MenuSection MS, string mone)
         {
+            this.moneda = mone;
             this.ListMenItem = MS;
             carga();
             InitListeners();
@@ -53,7 +55,7 @@ namespace M15_ProjecteConsumidor.Controlador
                 Model.MenuItem M = ListMenItem.MenuItems[i];
 
                 this.VM.label1.Text = "Nom Menu: "+M.Name;
-                this.VM.label4.Text = "" + M.Price+"$";
+                this.VM.label4.Text = "" + M.Price+this.moneda;
                 this.VM.label3.Text = "Descripcion: " + M.Description;
             }
         }

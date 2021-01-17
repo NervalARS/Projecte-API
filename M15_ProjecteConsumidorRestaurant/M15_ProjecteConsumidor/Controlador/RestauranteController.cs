@@ -112,7 +112,7 @@ namespace M15_ProjecteConsumidor.Controlador
 
         private void showMenu(Object sender, EventArgs e)
         {
-            MenuController MEN_CON = new MenuController(this.MmenuGlobal.MenuSections[indexselected]);
+            MenuController MEN_CON = new MenuController(this.MmenuGlobal.MenuSections[indexselected], RES.PriceRange);
         }
 
         private void exitapp(Object sender, EventArgs e)
