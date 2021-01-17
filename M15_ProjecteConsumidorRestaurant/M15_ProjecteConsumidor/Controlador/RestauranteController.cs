@@ -18,6 +18,7 @@ namespace M15_ProjecteConsumidor.Controlador
         double Glat;
         double Glon;
         Model.MMenu MmenuGlobal;
+        int indexselected=0;
 
         public RestauranteController(Restaurant RESTAURANT, VInici VV)
         {
@@ -102,23 +103,18 @@ namespace M15_ProjecteConsumidor.Controlador
             VR.BT_EXIT.Click += exitapp; 
             VR.BT_EXIT.Click += exitapp;
             VR.comboBox1.SelectedIndexChanged += CBSelected;
+            VR.RES_DGV_Menus.CellClick += selectedMenuSelection;
+        }
+        
+
+        private void selectedMenuSelection(Object sender, DataGridViewCellEventArgs e)
+        {
+            indexselected
         }
 
         private void showMenu(Object sender, EventArgs e)
         {
-            //MenuController MEN_CON = new MenuController(VR.RES_DGV_Menus.SelectedRows);
-            if (!(VR.RES_DGV_Menus.SelectedRows.Count > 0))
-            {
-                string s ="" + VR.RES_DGV_Menus.SelectedRows[0].Cells[0];
-                foreach (MenuSection MS in MmenuGlobal)
-                {
-                    if (MS.SectionName.Equals(s))
-                    {
-                        MenuController MEN_CON = new MenuController(MS.MenuItems);
-                        break;
-                    }
-                }
-            }
+            MenuController MEN_CON = new MenuController(this.MmenuGlobal.MenuSections[indexselected]);
         }
 
         private void exitapp(Object sender, EventArgs e)

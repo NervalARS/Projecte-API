@@ -22,7 +22,15 @@ namespace M15_ProjecteConsumidor.Controlador
             VM.ShowDialog();
         }
 
-         private void carga()
+        public MenuController(MenuSection MS)
+        {
+            this.ListMenItem = s;
+            carga();
+            InitListeners();
+            VM.ShowDialog();
+        }
+
+        private void carga()
         {
             VM.dataGridView1.DataSource = ListMenItem;
         }
