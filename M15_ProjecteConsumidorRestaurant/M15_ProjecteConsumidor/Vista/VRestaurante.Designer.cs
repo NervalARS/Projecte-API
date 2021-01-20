@@ -105,7 +105,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.RES_LastMod.Dock = System.Windows.Forms.DockStyle.Right;
             this.RES_LastMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RES_LastMod.ForeColor = System.Drawing.Color.Black;
-            this.RES_LastMod.Location = new System.Drawing.Point(1353, 0);
+            this.RES_LastMod.Location = new System.Drawing.Point(902, 0);
             this.RES_LastMod.Name = "RES_LastMod";
             this.RES_LastMod.Size = new System.Drawing.Size(182, 20);
             this.RES_LastMod.TabIndex = 13;

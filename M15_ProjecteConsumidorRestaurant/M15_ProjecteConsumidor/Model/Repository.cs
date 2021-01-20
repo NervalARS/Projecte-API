@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
+
 
 namespace M15_ProjecteConsumidor.Model
 {
@@ -66,6 +69,54 @@ namespace M15_ProjecteConsumidor.Model
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+
+        public static bool insertUser(AppRegister U)
+        {
+            try
+            {
+                APIEntities1 AE = new APIEntities1();
+                AE.AppRegister.Add(U);
+                AE.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: "+ex);
+                return false;
+            }
+        }
+
+        public static string ComputeSha256Hash(string rawData)
+        {
+            // Create a SHA256   
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        public static bool usuariExistent(string usr, string pas)
+        {
+            APIEntities1 AE = new APIEntities1();
+            List<AppRegister> ListUsers = AE.AppRegister.ToList();
+            foreach (AppRegister U in ListUsers)
+            {
+                if ( (U.USRS.Equals(ComputeSha256Hash(usr))) && (U.PASSW.Equals(ComputeSha256Hash(pas))) )
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -38,13 +38,31 @@ namespace M15_ProjecteConsumidor.Vista
             this.NOM_API = new System.Windows.Forms.Label();
             this.PANEL_REST_Title = new System.Windows.Forms.Label();
             this.PANEL_REST_BT = new System.Windows.Forms.Button();
-            this.PANEL_INICI = new System.Windows.Forms.Panel();
+            this.PANEL_Login = new System.Windows.Forms.Panel();
+            this.PANEL_INI_BTRegist = new System.Windows.Forms.Button();
+            this.PANEL_INIC_BTLogin = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PANEL_INIC_TBPass = new System.Windows.Forms.TextBox();
+            this.PANEL_INIC_TBUser = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.PANEL_REST = new System.Windows.Forms.Panel();
             this.PANEL_REST_TB_RESTID = new System.Windows.Forms.TextBox();
+            this.PANEL_Registrar = new System.Windows.Forms.Panel();
+            this.PANEL_REG_BT_Volver = new System.Windows.Forms.Button();
+            this.PANEL_REG_BT_Registrar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PANEL_REG_PASS = new System.Windows.Forms.TextBox();
+            this.PANEL_REG_USR = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PANEL_REG_AlertaINSUSER = new System.Windows.Forms.Label();
             this.BUTTONS_PANEL.SuspendLayout();
             this.FOOTHER_BUTTONS_PANEL.SuspendLayout();
             this.HEADER_BUTTONS_PANELS.SuspendLayout();
+            this.PANEL_Login.SuspendLayout();
             this.PANEL_REST.SuspendLayout();
+            this.PANEL_Registrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // BUTTONS_PANEL
@@ -76,6 +94,7 @@ namespace M15_ProjecteConsumidor.Vista
             this.BT_SHOW_RESTAURANTS.AllowDrop = true;
             this.BT_SHOW_RESTAURANTS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BT_SHOW_RESTAURANTS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.BT_SHOW_RESTAURANTS.Enabled = false;
             this.BT_SHOW_RESTAURANTS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
             this.BT_SHOW_RESTAURANTS.FlatAppearance.BorderSize = 0;
             this.BT_SHOW_RESTAURANTS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -182,15 +201,105 @@ namespace M15_ProjecteConsumidor.Vista
             this.PANEL_REST_BT.UseVisualStyleBackColor = false;
             this.PANEL_REST_BT.Click += new System.EventHandler(this.PANEL_REST_BT_Click);
             // 
-            // PANEL_INICI
+            // PANEL_Login
             // 
-            this.PANEL_INICI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
-            this.PANEL_INICI.Location = new System.Drawing.Point(357, 58);
-            this.PANEL_INICI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PANEL_INICI.Name = "PANEL_INICI";
-            this.PANEL_INICI.Size = new System.Drawing.Size(435, 442);
-            this.PANEL_INICI.TabIndex = 4;
-            this.PANEL_INICI.Paint += new System.Windows.Forms.PaintEventHandler(this.PANEL_INICI_Paint);
+            this.PANEL_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.PANEL_Login.Controls.Add(this.PANEL_INI_BTRegist);
+            this.PANEL_Login.Controls.Add(this.PANEL_INIC_BTLogin);
+            this.PANEL_Login.Controls.Add(this.label3);
+            this.PANEL_Login.Controls.Add(this.label2);
+            this.PANEL_Login.Controls.Add(this.PANEL_INIC_TBPass);
+            this.PANEL_Login.Controls.Add(this.PANEL_INIC_TBUser);
+            this.PANEL_Login.Controls.Add(this.label1);
+            this.PANEL_Login.Location = new System.Drawing.Point(357, 58);
+            this.PANEL_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_Login.Name = "PANEL_Login";
+            this.PANEL_Login.Size = new System.Drawing.Size(435, 442);
+            this.PANEL_Login.TabIndex = 4;
+            this.PANEL_Login.Paint += new System.Windows.Forms.PaintEventHandler(this.PANEL_INICI_Paint);
+            // 
+            // PANEL_INI_BTRegist
+            // 
+            this.PANEL_INI_BTRegist.AllowDrop = true;
+            this.PANEL_INI_BTRegist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PANEL_INI_BTRegist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_INI_BTRegist.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_INI_BTRegist.FlatAppearance.BorderSize = 0;
+            this.PANEL_INI_BTRegist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL_INI_BTRegist.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.PANEL_INI_BTRegist.ForeColor = System.Drawing.Color.White;
+            this.PANEL_INI_BTRegist.Location = new System.Drawing.Point(264, 282);
+            this.PANEL_INI_BTRegist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_INI_BTRegist.Name = "PANEL_INI_BTRegist";
+            this.PANEL_INI_BTRegist.Size = new System.Drawing.Size(120, 43);
+            this.PANEL_INI_BTRegist.TabIndex = 8;
+            this.PANEL_INI_BTRegist.Text = "Registrar";
+            this.PANEL_INI_BTRegist.UseVisualStyleBackColor = false;
+            // 
+            // PANEL_INIC_BTLogin
+            // 
+            this.PANEL_INIC_BTLogin.AllowDrop = true;
+            this.PANEL_INIC_BTLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PANEL_INIC_BTLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_INIC_BTLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_INIC_BTLogin.FlatAppearance.BorderSize = 0;
+            this.PANEL_INIC_BTLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL_INIC_BTLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.PANEL_INIC_BTLogin.ForeColor = System.Drawing.Color.White;
+            this.PANEL_INIC_BTLogin.Location = new System.Drawing.Point(52, 282);
+            this.PANEL_INIC_BTLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_INIC_BTLogin.Name = "PANEL_INIC_BTLogin";
+            this.PANEL_INIC_BTLogin.Size = new System.Drawing.Size(175, 43);
+            this.PANEL_INIC_BTLogin.TabIndex = 7;
+            this.PANEL_INIC_BTLogin.Text = "Iniciar Session";
+            this.PANEL_INIC_BTLogin.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(47, 185);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Contraseña:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(47, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Usuario:";
+            // 
+            // PANEL_INIC_TBPass
+            // 
+            this.PANEL_INIC_TBPass.Location = new System.Drawing.Point(52, 217);
+            this.PANEL_INIC_TBPass.Name = "PANEL_INIC_TBPass";
+            this.PANEL_INIC_TBPass.Size = new System.Drawing.Size(332, 26);
+            this.PANEL_INIC_TBPass.TabIndex = 2;
+            // 
+            // PANEL_INIC_TBUser
+            // 
+            this.PANEL_INIC_TBUser.Location = new System.Drawing.Point(52, 129);
+            this.PANEL_INIC_TBUser.Name = "PANEL_INIC_TBUser";
+            this.PANEL_INIC_TBUser.Size = new System.Drawing.Size(332, 26);
+            this.PANEL_INIC_TBUser.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(272, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Inicia Sesion:";
             // 
             // PANEL_REST
             // 
@@ -215,24 +324,141 @@ namespace M15_ProjecteConsumidor.Vista
             this.PANEL_REST_TB_RESTID.TabIndex = 16;
             this.PANEL_REST_TB_RESTID.TextChanged += new System.EventHandler(this.PANEL_REST_TB_RESTID_TextChanged);
             // 
+            // PANEL_Registrar
+            // 
+            this.PANEL_Registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.PANEL_Registrar.Controls.Add(this.PANEL_REG_AlertaINSUSER);
+            this.PANEL_Registrar.Controls.Add(this.PANEL_REG_BT_Volver);
+            this.PANEL_Registrar.Controls.Add(this.PANEL_REG_BT_Registrar);
+            this.PANEL_Registrar.Controls.Add(this.label4);
+            this.PANEL_Registrar.Controls.Add(this.label5);
+            this.PANEL_Registrar.Controls.Add(this.PANEL_REG_PASS);
+            this.PANEL_Registrar.Controls.Add(this.PANEL_REG_USR);
+            this.PANEL_Registrar.Controls.Add(this.label6);
+            this.PANEL_Registrar.Location = new System.Drawing.Point(357, 58);
+            this.PANEL_Registrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_Registrar.Name = "PANEL_Registrar";
+            this.PANEL_Registrar.Size = new System.Drawing.Size(435, 442);
+            this.PANEL_Registrar.TabIndex = 5;
+            // 
+            // PANEL_REG_BT_Volver
+            // 
+            this.PANEL_REG_BT_Volver.AllowDrop = true;
+            this.PANEL_REG_BT_Volver.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PANEL_REG_BT_Volver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_REG_BT_Volver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_REG_BT_Volver.FlatAppearance.BorderSize = 0;
+            this.PANEL_REG_BT_Volver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL_REG_BT_Volver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.PANEL_REG_BT_Volver.ForeColor = System.Drawing.Color.White;
+            this.PANEL_REG_BT_Volver.Location = new System.Drawing.Point(264, 282);
+            this.PANEL_REG_BT_Volver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_REG_BT_Volver.Name = "PANEL_REG_BT_Volver";
+            this.PANEL_REG_BT_Volver.Size = new System.Drawing.Size(120, 43);
+            this.PANEL_REG_BT_Volver.TabIndex = 8;
+            this.PANEL_REG_BT_Volver.Text = "Volver";
+            this.PANEL_REG_BT_Volver.UseVisualStyleBackColor = false;
+            // 
+            // PANEL_REG_BT_Registrar
+            // 
+            this.PANEL_REG_BT_Registrar.AllowDrop = true;
+            this.PANEL_REG_BT_Registrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PANEL_REG_BT_Registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_REG_BT_Registrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(150)))));
+            this.PANEL_REG_BT_Registrar.FlatAppearance.BorderSize = 0;
+            this.PANEL_REG_BT_Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL_REG_BT_Registrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.PANEL_REG_BT_Registrar.ForeColor = System.Drawing.Color.White;
+            this.PANEL_REG_BT_Registrar.Location = new System.Drawing.Point(52, 282);
+            this.PANEL_REG_BT_Registrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PANEL_REG_BT_Registrar.Name = "PANEL_REG_BT_Registrar";
+            this.PANEL_REG_BT_Registrar.Size = new System.Drawing.Size(175, 43);
+            this.PANEL_REG_BT_Registrar.TabIndex = 7;
+            this.PANEL_REG_BT_Registrar.Text = "Registrarme";
+            this.PANEL_REG_BT_Registrar.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(47, 185);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Contraseña:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(47, 94);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Usuario:";
+            // 
+            // PANEL_REG_PASS
+            // 
+            this.PANEL_REG_PASS.Location = new System.Drawing.Point(52, 217);
+            this.PANEL_REG_PASS.Name = "PANEL_REG_PASS";
+            this.PANEL_REG_PASS.Size = new System.Drawing.Size(332, 26);
+            this.PANEL_REG_PASS.TabIndex = 2;
+            // 
+            // PANEL_REG_USR
+            // 
+            this.PANEL_REG_USR.Location = new System.Drawing.Point(52, 129);
+            this.PANEL_REG_USR.Name = "PANEL_REG_USR";
+            this.PANEL_REG_USR.Size = new System.Drawing.Size(332, 26);
+            this.PANEL_REG_USR.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(359, 46);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Registrar Usuario:";
+            // 
+            // PANEL_REG_AlertaINSUSER
+            // 
+            this.PANEL_REG_AlertaINSUSER.AutoSize = true;
+            this.PANEL_REG_AlertaINSUSER.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PANEL_REG_AlertaINSUSER.ForeColor = System.Drawing.Color.Red;
+            this.PANEL_REG_AlertaINSUSER.Location = new System.Drawing.Point(47, 354);
+            this.PANEL_REG_AlertaINSUSER.Name = "PANEL_REG_AlertaINSUSER";
+            this.PANEL_REG_AlertaINSUSER.Size = new System.Drawing.Size(120, 25);
+            this.PANEL_REG_AlertaINSUSER.TabIndex = 10;
+            this.PANEL_REG_AlertaINSUSER.Text = "Contraseña:";
+            // 
             // VInici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(807, 523);
-            this.Controls.Add(this.PANEL_INICI);
-            this.Controls.Add(this.PANEL_REST);
+            this.Controls.Add(this.PANEL_Login);
             this.Controls.Add(this.BUTTONS_PANEL);
+            this.Controls.Add(this.PANEL_REST);
+            this.Controls.Add(this.PANEL_Registrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VInici";
             this.Text = "Inici";
+            this.Load += new System.EventHandler(this.VInici_Load);
             this.BUTTONS_PANEL.ResumeLayout(false);
             this.FOOTHER_BUTTONS_PANEL.ResumeLayout(false);
             this.HEADER_BUTTONS_PANELS.ResumeLayout(false);
             this.HEADER_BUTTONS_PANELS.PerformLayout();
+            this.PANEL_Login.ResumeLayout(false);
+            this.PANEL_Login.PerformLayout();
             this.PANEL_REST.ResumeLayout(false);
             this.PANEL_REST.PerformLayout();
+            this.PANEL_Registrar.ResumeLayout(false);
+            this.PANEL_Registrar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,8 +473,24 @@ namespace M15_ProjecteConsumidor.Vista
         public System.Windows.Forms.Label NOM_API;
         public System.Windows.Forms.Label PANEL_REST_Title;
         public System.Windows.Forms.Button PANEL_REST_BT;
-        public System.Windows.Forms.Panel PANEL_INICI;
+        public System.Windows.Forms.Panel PANEL_Login;
         public System.Windows.Forms.Panel PANEL_REST;
         public System.Windows.Forms.TextBox PANEL_REST_TB_RESTID;
+        public System.Windows.Forms.Button PANEL_INIC_BTLogin;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox PANEL_INIC_TBPass;
+        public System.Windows.Forms.TextBox PANEL_INIC_TBUser;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel PANEL_Registrar;
+        public System.Windows.Forms.Button PANEL_REG_BT_Registrar;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox PANEL_REG_PASS;
+        public System.Windows.Forms.TextBox PANEL_REG_USR;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Button PANEL_INI_BTRegist;
+        public System.Windows.Forms.Button PANEL_REG_BT_Volver;
+        public System.Windows.Forms.Label PANEL_REG_AlertaINSUSER;
     }
 }
