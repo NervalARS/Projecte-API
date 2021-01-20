@@ -75,7 +75,7 @@ namespace M15_ProjecteConsumidor.Model
         {
             try
             {
-                APIEntities1 AE = new APIEntities1();
+                APIEntities AE = new APIEntities();
                 AE.AppRegister.Add(U);
                 AE.SaveChanges();
                 return true;
@@ -107,14 +107,22 @@ namespace M15_ProjecteConsumidor.Model
 
         public static bool usuariExistent(string usr, string pas)
         {
-            APIEntities1 AE = new APIEntities1();
-            List<AppRegister> ListUsers = AE.AppRegister.ToList();
-            foreach (AppRegister U in ListUsers)
+            try
             {
-                if ( (U.USRS.Equals(ComputeSha256Hash(usr))) && (U.PASSW.Equals(ComputeSha256Hash(pas))) )
+                APIEntities AE = new APIEntities();
+                List<AppRegister> ListUsers = AE.AppRegister.ToList();
+                foreach (AppRegister U in ListUsers)
                 {
-                    return true;
+                    if ((U.USRS.Equals(ComputeSha256Hash(usr))))
+                    {
+                        return true;
+                    }
                 }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: "+ex);
             }
             return false;
         }

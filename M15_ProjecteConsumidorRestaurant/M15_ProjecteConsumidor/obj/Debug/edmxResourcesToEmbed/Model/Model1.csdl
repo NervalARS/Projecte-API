@@ -7,7 +7,7 @@
     <Property Name="USRS" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PASSW" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="APIEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="APIEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AppRegister" EntityType="Self.AppRegister" />
   </EntityContainer>
 </Schema>

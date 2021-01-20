@@ -13,10 +13,10 @@ namespace M15_ProjecteConsumidor.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class APIEntities1 : DbContext
+    public partial class APIEntities : DbContext
     {
-        public APIEntities1()
-            : base("name=APIEntities1")
+        public APIEntities()
+            : base("name=APIEntities")
         {
         }
     

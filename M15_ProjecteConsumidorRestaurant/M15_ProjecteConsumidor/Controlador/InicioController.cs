@@ -11,7 +11,6 @@ namespace M15_ProjecteConsumidor.Controlador
 {
     class InicioController
     {
-        bool loged;
         
         VInici VI = new VInici();
         public InicioController()
@@ -19,7 +18,6 @@ namespace M15_ProjecteConsumidor.Controlador
             try
             {
                 VI.PANEL_REG_AlertaINSUSER.Visible = false;
-                this.loged = false;
                 InitListeners();
                 VI.PANEL_Login.BringToFront();
                 Application.Run(VI);
@@ -145,8 +143,6 @@ namespace M15_ProjecteConsumidor.Controlador
         }
         #endregion
 
-        #region | Controladores Panel Login 
-        #endregion
         #region | Otros Métodos
 
         #endregion
